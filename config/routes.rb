@@ -1,9 +1,21 @@
 Gobirdoffers::Application.routes.draw do
   resources :users
 
+  #get "informational/about"
+  #get "informational/contact"
+  #get "informational/home"
+  #get "informational/help"
+  #get "informational/legal"  
+
+  match '/about',   to: 'informational#about'
+  match '/contact', to: 'informational#contact'
+  match '/home',    to: 'informational#home'
+  match '/help',    to: 'informational#help'
+  match '/legal',   to: 'informational#legal'
+
   match '/signup',  to: 'users#new'    
 
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
