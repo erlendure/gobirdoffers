@@ -1,0 +1,1 @@
+rails generate model Offer owner_id:integer heading:string price:decimal discount:decimal details:string terms:string featured:string end_date:datetime expire_date_begin:datetime expire_date_end:datetime active:boolean locale_id:integer user_id:integer

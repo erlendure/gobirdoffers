@@ -1,0 +1,1 @@
+rails generate model Category cat_name:string cat_description:string locale_id:integer
