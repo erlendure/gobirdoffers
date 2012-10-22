@@ -10,4 +10,7 @@ class InformationalController < ApplicationController
 
   def legal
   end
+
+  def home
+  end  
 end

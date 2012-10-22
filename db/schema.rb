@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121018162817) do
+ActiveRecord::Schema.define(:version => 20121022114037) do
 
   create_table "bullet_points", :force => true do |t|
     t.integer  "offer_id"
@@ -128,8 +128,10 @@ ActiveRecord::Schema.define(:version => 20121018162817) do
     t.datetime "updated_at",      :null => false
     t.string   "username"
     t.string   "password_digest"
+    t.string   "remember_token"
   end
 
   add_index "users", ["name"], :name => "index_users_on_name"
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end
