@@ -1,6 +1,14 @@
 class Offer < ActiveRecord::Base
-  attr_accessible :active, :details, :discount, :end_date, :expire_date_begin, :expire_date_end, :featured, :heading, :locale_id, :owner_id, :price, :terms, :user_id
+  attr_accessible :active, :details, :discount, :end_date, :expire_date_begin, :expire_date_end, :featured, :heading, :locale_id, :price, :terms
+
+  belongs_to :user
+
+  validates :user_id, presence: true
+  validates :owner_id, presence: true
+
+  default_scope order: 'offers.created_at DESC'  
 end
+
 # == Schema Information
 #
 # Table name: offers

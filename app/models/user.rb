@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  has_many :offers
+
   before_save { |user| user.email = email.downcase }
   before_save { |user| user.username = username.downcase }
   before_save :create_remember_token
@@ -18,11 +20,11 @@ class User < ActiveRecord::Base
   
 
   private
-
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end  
 end
+
 # == Schema Information
 #
 # Table name: users

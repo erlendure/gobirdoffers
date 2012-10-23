@@ -1,6 +1,7 @@
 Gobirdoffers::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :offers, only: [:create, :edit, :destroy]
 
   root to: 'informational#home'
 
