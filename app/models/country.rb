@@ -1,6 +1,10 @@
 class Country < ActiveRecord::Base
   attr_accessible :country_name, :default_locale_id
+
+  validates :country_name,  presence: true
+  validates :default_locale_id, presence: true
 end
+
 # == Schema Information
 #
 # Table name: countries

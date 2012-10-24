@@ -1,6 +1,11 @@
 class Category < ActiveRecord::Base
   attr_accessible :cat_description, :cat_name, :locale_id
+
+  validates :cat_description,  presence: true
+  validates :cat_name, presence: true  
+  validates :locale_id, presence: true      
 end
+
 # == Schema Information
 #
 # Table name: categories
@@ -12,4 +17,3 @@ end
 #  created_at      :datetime        not null
 #  updated_at      :datetime        not null
 #
-

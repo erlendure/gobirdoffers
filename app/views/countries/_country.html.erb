@@ -1,0 +1,6 @@
+<tr>
+  <td><%= country.country_name %></td>
+  <td><%= country.default_locale_id %></td>
+  <td><%= link_to '', edit_country_path(country) , class: "icon-edit" %></td>
+  <td><%= link_to '', country, confirm: 'Are you sure?', method: :delete, class: "icon-remove" %></td>
+</tr>

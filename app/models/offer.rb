@@ -4,7 +4,7 @@ class Offer < ActiveRecord::Base
   belongs_to :user
 
   validates :user_id, presence: true
-  validates :owner_id, presence: true
+  #validates :owner_id, presence: true
 
   default_scope order: 'offers.created_at DESC'  
 end
@@ -30,4 +30,3 @@ end
 #  created_at        :datetime        not null
 #  updated_at        :datetime        not null
 #
-

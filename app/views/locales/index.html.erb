@@ -1,0 +1,19 @@
+<% provide(:title, 'Locales List') %>
+<h1>Locale List</h1>
+
+<%= will_paginate %>
+<p><%= link_to "New Locale", new_locale_path %></p>
+
+<table class="table table-hover">
+  <thead>
+    <th>Locale ID</th>
+    <th>Description</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+  	<%= render @locales %>
+  </tbody>	
+</table>	
+
+<%= will_paginate %>

@@ -1,5 +1,10 @@
 Gobirdoffers::Application.routes.draw do
   resources :users
+  resources :owners  
+  resources :offers
+  resources :locales
+  resources :countries
+  resources :categories
   resources :sessions, only: [:new, :create, :destroy]
   resources :offers, only: [:create, :edit, :destroy]
 
@@ -9,21 +14,17 @@ Gobirdoffers::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
-  #get "informational/about"
-  #get "informational/contact"
-  #get "informational/home"
-  #get "informational/help"
-  #get "informational/legal"  
+
+  match '/newoffer',  to: 'offers#new'
+
 
   match '/about',   to: 'informational#about'
   match '/contact', to: 'informational#contact'
   match '/home',    to: 'informational#home'
   match '/help',    to: 'informational#help'
   match '/legal',   to: 'informational#legal'
-
-  match '/signup',  to: 'users#new'    
-
-  
+  match '/setting', to: 'informational#setting'  
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

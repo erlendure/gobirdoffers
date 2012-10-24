@@ -1,5 +1,15 @@
 class Owner < ActiveRecord::Base
   attr_accessible :address1, :address2, :address3, :city, :contact_address1, :contact_address2, :contact_address3, :contact_city, :contact_country_id, :contact_email, :contact_name, :contact_phone, :contact_state, :contact_zip, :country_id, :email, :locale_id, :name, :phone, :state, :url, :zip
+
+  before_save { |owner| owner.email = email.downcase }
+  before_save { |owner| owner.contact_email = contact_email.downcase } 
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+  validates :contact_email, presence: true, format: { with: VALID_EMAIL_REGEX }
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true
 end
 # == Schema Information
 #

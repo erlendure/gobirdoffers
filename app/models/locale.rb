@@ -1,6 +1,10 @@
 class Locale < ActiveRecord::Base
   attr_accessible :description, :locale_id
+
+  validates :description,  presence: true
+  validates :locale_id, presence: true,  uniqueness: true  
 end
+
 # == Schema Information
 #
 # Table name: locales

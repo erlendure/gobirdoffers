@@ -1,0 +1,20 @@
+<% provide(:title, 'Settings') %>
+<h1>System Settings</h1>
+<p>
+  Users: <%= link_to "Show", users_path %>
+</p>
+<p>
+  Locales: <%= link_to "Show", locales_path %> - <%= link_to "New", new_locale_path %>
+</p>
+<p>
+  Countries: <%= link_to "Show", countries_path %> - <%= link_to "New", new_country_path %>
+</p>
+<p>
+  Categories: <%= link_to "Show", categories_path %> - <%= link_to "New", new_category_path %>
+</p>
+<p>
+  Onwers: <%= link_to "Show", owners_path %> - <%= link_to "New", new_owner_path %>
+</p>
+<p>
+  Offers: <%= link_to "Show", offers_path %> - <%= link_to "New", new_offer_path %>
+</p>

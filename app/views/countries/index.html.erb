@@ -1,0 +1,19 @@
+<% provide(:title, 'All Countries') %>
+<h1>All Countries</h1>
+
+<%= will_paginate %>
+<p><%= link_to "New Country", new_country_path %></p>
+
+<table class="table table-hover">
+  <thead>
+    <th>Country</th>
+    <th>Locale ID</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+  	<%= render @countries %>
+  </tbody>	
+</table>
+
+<%= will_paginate %>

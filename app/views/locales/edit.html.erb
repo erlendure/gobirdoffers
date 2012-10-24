@@ -1,0 +1,18 @@
+<% provide(:title, "Edit Locale") %> 
+<h1>Update Locale</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@locale) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :locale_id %>
+      <%= f.number_field :locale_id %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

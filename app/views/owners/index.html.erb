@@ -1,0 +1,21 @@
+<% provide(:title, 'All owners') %>
+<h1>All owners</h1>
+
+<%= will_paginate %>
+<p><%= link_to "New Owner", new_owner_path %></p>
+
+<table class="table table-hover">
+  <thead>
+    <th>Name</th>
+    <th>eMail</th>    
+    <th>Contact Name</th>
+    <th>Contact eMail</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+  	<%= render @owners %>
+  </tbody>	
+</table>	
+
+<%= will_paginate %>

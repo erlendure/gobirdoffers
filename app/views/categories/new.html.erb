@@ -1,0 +1,21 @@
+<% provide(:title, 'Create Category') %>
+<h1>New Locale</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@category) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :cat_name %>
+      <%= f.text_field :cat_name %>   
+            
+      <%= f.label :cat_description %>
+      <%= f.text_field :cat_description %>   
+
+      <%= f.label :locale_id %>
+      <%= f.number_field :locale_id %>
+
+      <%= f.submit "Create new Category", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
