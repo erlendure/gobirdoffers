@@ -1,5 +1,8 @@
 class Owner < ActiveRecord::Base
-  attr_accessible :address1, :address2, :address3, :city, :contact_address1, :contact_address2, :contact_address3, :contact_city, :contact_country_id, :contact_email, :contact_name, :contact_phone, :contact_state, :contact_zip, :country_id, :email, :locale_id, :name, :phone, :state, :url, :zip
+  attr_accessible :address1, :address2, :address3, :city, :contact_address1, :contact_address2, :contact_address3, :contact_city, :contact_country_id, :contact_email, :contact_name, :contact_phone, :contact_state, :contact_zip, :country_id, :email, :name, :phone, :state, :url, :zip
+
+  belongs_to :user
+  has_many :offers
 
   before_save { |owner| owner.email = email.downcase }
   before_save { |owner| owner.contact_email = contact_email.downcase } 
@@ -37,7 +40,6 @@ end
 #  contact_phone      :string(255)
 #  contact_country_id :integer
 #  contact_email      :string(255)
-#  locale_id          :integer
 #  created_at         :datetime        not null
 #  updated_at         :datetime        not null
 #

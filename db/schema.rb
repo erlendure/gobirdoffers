@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121023045528) do
+ActiveRecord::Schema.define(:version => 20121024195932) do
 
   create_table "bullet_points", :force => true do |t|
     t.integer  "offer_id"
@@ -67,19 +67,16 @@ ActiveRecord::Schema.define(:version => 20121023045528) do
     t.decimal  "discount"
     t.string   "details"
     t.string   "terms"
-    t.string   "featured"
+    t.boolean  "featured",          :limit => 255
     t.datetime "end_date"
     t.datetime "expire_date_begin"
     t.datetime "expire_date_end"
     t.boolean  "active"
-    t.integer  "locale_id"
-    t.integer  "user_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   add_index "offers", ["owner_id"], :name => "index_offers_on_owner_id"
-  add_index "offers", ["user_id"], :name => "index_offers_on_user_id"
 
   create_table "owners", :force => true do |t|
     t.string   "name"
@@ -103,9 +100,9 @@ ActiveRecord::Schema.define(:version => 20121023045528) do
     t.string   "contact_phone"
     t.integer  "contact_country_id"
     t.string   "contact_email"
-    t.integer  "locale_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "user_id"
   end
 
   add_index "owners", ["name"], :name => "index_owners_on_name"
@@ -122,7 +119,6 @@ ActiveRecord::Schema.define(:version => 20121023045528) do
     t.integer  "country_id"
     t.string   "email"
     t.string   "url"
-    t.integer  "locale_id"
     t.string   "access_level"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false

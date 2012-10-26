@@ -1,0 +1,11 @@
+<% provide(:title, @offer.heading) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1><%= @offer.heading %></h1>
+      <p>Owner: <%= @offer.owner.name %></p>      
+      <p>Created by: <%= @offer.owner.user.name %></p>
+      <p>Posted : <%= @offer.created_at %></p>      
+    </section>
+  </aside>
+</div>

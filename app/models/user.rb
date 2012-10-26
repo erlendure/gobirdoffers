@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
-  attr_accessible :access_level, :address1, :address2, :address3, :city, :country_id, :email, :locale_id, :name, :phone, :state, :url, :zip, :username, :password, :password_confirmation
+  attr_accessible :access_level, :address1, :address2, :address3, :city, :country_id, :email, :name, :phone, :state, :url, :zip, :username, :password, :password_confirmation
 
   has_secure_password
 
-  has_many :offers
+  has_many :owners
+  has_many :offers, :through => :owners
 
   before_save { |user| user.email = email.downcase }
   before_save { |user| user.username = username.downcase }
@@ -41,7 +42,6 @@ end
 #  country_id   :integer
 #  email        :string(255)
 #  url          :string(255)
-#  locale_id    :integer
 #  access_level :string(255)
 #  created_at   :datetime        not null
 #  updated_at   :datetime        not null

@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
+    @countries = Country.select("id, country_name").all    
   end
 
   def create
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
 	    flash[:success] = "Welcome to GoBirdOffers!"
       redirect_to @user
     else
+      @countries = Country.select("id, country_name").all      
       render 'new'
     end
   end
@@ -29,6 +31,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @countries = Country.select("id, country_name").all    
   end 
 
   def update
@@ -38,6 +41,7 @@ class UsersController < ApplicationController
       sign_in @user
       redirect_to @user
     else
+      @countries = Country.select("id, country_name").all
       render 'edit'
     end
   end  

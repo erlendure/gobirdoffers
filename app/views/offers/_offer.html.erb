@@ -1,11 +1,12 @@
-<tr>	
+<tr>
   <td><%= link_to offer.heading, offer %></td>
+  <td><%= offer.owner.name %></td>    
   <td><%= offer.price %></td>
-  <td><%= offer.active %></td> 
-  <td><%= offer.user.name %></td>
-  <td><%= time_ago_in_words(offer.created_at) %> ago</td>  
+  <td><%= offer.active %></td>
+  <td><%= offer.owner.user.name %></td>
+  <td><%= time_ago_in_words(offer.created_at) %> ago</td>
   <td><%= link_to '', edit_offer_path(offer) , class: "icon-edit" %></td>
-  <td><% if current_user.admin? %> 
+  <td><% if current_user.admin? %>
   	  <%= link_to '', offer, method: :delete, confirm: "You sure?", class: "icon-remove" %>
   <% end %></td>
 </tr>

@@ -1,10 +1,11 @@
 class Offer < ActiveRecord::Base
-  attr_accessible :active, :details, :discount, :end_date, :expire_date_begin, :expire_date_end, :featured, :heading, :locale_id, :price, :terms
+  attr_accessible :owner_id, :active, :details, :discount, :end_date, :expire_date_begin, :expire_date_end, :featured, :heading, :price, :terms
 
-  belongs_to :user
-
-  validates :user_id, presence: true
-  #validates :owner_id, presence: true
+  belongs_to :owner
+  
+  #has_one :user, :through => :owner
+  
+  validates :owner_id, presence: true
 
   default_scope order: 'offers.created_at DESC'  
 end
@@ -20,13 +21,11 @@ end
 #  discount          :decimal(, )
 #  details           :string(255)
 #  terms             :string(255)
-#  featured          :string(255)
+#  featured          :boolean
 #  end_date          :datetime
 #  expire_date_begin :datetime
 #  expire_date_end   :datetime
 #  active            :boolean
-#  locale_id         :integer
-#  user_id           :integer
 #  created_at        :datetime        not null
 #  updated_at        :datetime        not null
 #

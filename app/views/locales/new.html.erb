@@ -6,11 +6,7 @@
     <%= form_for(@locale) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       
-      <%= f.label :locale_id %>
-      <%= f.number_field :locale_id %>
-
-      <%= f.label :description %>
-      <%= f.text_field :description %>
+      <%= render 'fields', f: f %>
 
       <%= f.submit "Create new Locale", class: "btn btn-large btn-primary" %>
     <% end %>

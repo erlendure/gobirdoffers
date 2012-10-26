@@ -10,20 +10,23 @@ class OwnersController < ApplicationController
   end
 
   def new
-    @owner = Owner.new    
+    @owner = Owner.new
+    @countries = Country.select("id, country_name").all        
   end
 
   def create
-    @owner = Owner.new(params[:owner])
+    @owner = current_user.owners.build(params[:owner])
     if @owner.save
       redirect_to owners_path
     else
+      @countries = Country.select("id, country_name").all      
       render 'new'
     end    
   end
 
   def edit
-    @owner = Owner.find(params[:id])    
+    @owner = Owner.find(params[:id])
+    @countries = Country.select("id, country_name").all        
   end
 
   def update
@@ -32,6 +35,7 @@ class OwnersController < ApplicationController
       flash[:success] = "Owner updated"
       redirect_to owners_path
     else
+      @countries = Country.select("id, country_name").all          
       render 'edit'
     end
   end

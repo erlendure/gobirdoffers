@@ -6,11 +6,7 @@
     <%= form_for(@country) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :country_name %>
-      <%= f.text_field :country_name %>
-
-      <%= f.label :default_locale_id %>
-      <%= f.number_field :default_locale_id %>
+      <%= render 'fields', f: f %>
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
