@@ -1,5 +1,11 @@
 class BulletPoint < ActiveRecord::Base
-  attr_accessible :bullet_text, :offer_id
+  attr_accessible :bullet_text, :offer_id, :sequence
+
+  belongs_to :offer
+
+  validates :offer_id, presence: true    
+  validates :bullet_text, presence: true  
+  
 end
 # == Schema Information
 #

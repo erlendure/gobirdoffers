@@ -2,16 +2,19 @@ class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
   before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: :destroy  
-  before_filter :user_signed_in, only: [:new, :create]    
+  before_filter :user_signed_in, only: [:new, :create]
+  before_filter :get_countries,  only: [:new, :create, :edit, :update]  
+
+  def index
+    @users = User.paginate(page: params[:page])
+  end
 
   def show
     @user = User.find(params[:id])
-    @offers = @user.offers.paginate(page: params[:page])    
   end
 
   def new
   	@user = User.new
-    @countries = Country.select("id, country_name").all    
   end
 
   def create
@@ -21,27 +24,19 @@ class UsersController < ApplicationController
 	    flash[:success] = "Welcome to GoBirdOffers!"
       redirect_to @user
     else
-      @countries = Country.select("id, country_name").all      
       render 'new'
     end
   end
 
-  def index
-    @users = User.paginate(page: params[:page])
-  end
-
   def edit
-    @countries = Country.select("id, country_name").all    
   end 
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
       sign_in @user
       redirect_to @user
     else
-      @countries = Country.select("id, country_name").all
       render 'edit'
     end
   end  
@@ -60,5 +55,5 @@ class UsersController < ApplicationController
 
     def user_signed_in 
       redirect_to(root_path) if signed_in?
-    end     
+    end
 end

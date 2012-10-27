@@ -5,6 +5,8 @@
   <td><%= offer.active %></td>
   <td><%= offer.owner.user.name %></td>
   <td><%= time_ago_in_words(offer.created_at) %> ago</td>
+  <td><%= link_to 'Show', bullet_points_path(offer.id) %></td>  
+  <td><%= link_to 'Show', offer_categories_path(offer.id) %></td>    
   <td><%= link_to '', edit_offer_path(offer) , class: "icon-edit" %></td>
   <td><% if current_user.admin? %>
   	  <%= link_to '', offer, method: :delete, confirm: "You sure?", class: "icon-remove" %>

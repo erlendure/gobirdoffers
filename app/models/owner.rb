@@ -11,7 +11,7 @@ class Owner < ActiveRecord::Base
 
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
   validates :contact_email, presence: true, format: { with: VALID_EMAIL_REGEX }
-  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true, uniqueness: { case_sensitive: false, scope: :user_id}
   validates :name, presence: true
 end
 # == Schema Information

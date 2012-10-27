@@ -1,0 +1,29 @@
+<% provide(:title, 'Bullet Points') %>
+<h1>Bullet List</h1>
+
+<p>Offer: <%= @offer.heading %> </p>
+<table class="table table-hover">
+  <thead>
+    <th>Sequence</th>
+    <th>Text</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>  
+  	<%= render @bullet_points unless @bullet_points.nil? %>
+  </tbody>	  	
+</table>	
+
+<div class="row">
+  <div class="span6 offset3">
+	<%= form_for(@bpoints) do |f| %>
+	  <%= render 'shared/error_messages', object: f.object %>
+
+      <%= render 'fields', f: f %>
+
+      <%= f.hidden_field :offer_id, :value => @offer.id  %>
+
+      <%= f.submit "Create new Bullet Point", class: "btn btn-large btn-primary" %>
+	<% end %>	
+  </div>
+</div>

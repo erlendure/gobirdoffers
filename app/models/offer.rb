@@ -3,8 +3,10 @@ class Offer < ActiveRecord::Base
 
   belongs_to :owner
   
-  #has_one :user, :through => :owner
-  
+  has_many :images, dependent: :destroy  
+  has_many :bullet_points, dependent: :destroy
+  has_many :offer_categories, dependent: :destroy  
+
   validates :owner_id, presence: true
 
   default_scope order: 'offers.created_at DESC'  

@@ -1,6 +1,7 @@
 class OwnersController < ApplicationController
   before_filter :signed_in_user
-  
+  before_filter :get_countries,  only: [:new, :create, :edit, :update]  
+
   def index
     @owners = Owner.paginate(page: params[:page])    
   end
@@ -11,7 +12,6 @@ class OwnersController < ApplicationController
 
   def new
     @owner = Owner.new
-    @countries = Country.select("id, country_name").all        
   end
 
   def create
@@ -19,14 +19,12 @@ class OwnersController < ApplicationController
     if @owner.save
       redirect_to owners_path
     else
-      @countries = Country.select("id, country_name").all      
       render 'new'
     end    
   end
 
   def edit
     @owner = Owner.find(params[:id])
-    @countries = Country.select("id, country_name").all        
   end
 
   def update
@@ -35,7 +33,6 @@ class OwnersController < ApplicationController
       flash[:success] = "Owner updated"
       redirect_to owners_path
     else
-      @countries = Country.select("id, country_name").all          
       render 'edit'
     end
   end

@@ -1,6 +1,7 @@
 class OffersController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy]
   before_filter :correct_user,   only: :destroy
+  before_filter :get_owner, only: [:new, :create, :edit, :update]  
 
   def index
     @offers = Offer.paginate(page: params[:page])  
@@ -12,24 +13,20 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
-    @owners = Owner.select("id, name").where(:user_id => current_user.id)
   end  
 
   def create
-    #@offer = current_user.offers.build(params[:offer])
-    @offer = Offer.new(params[:offer])
+    @offer = current_user.offers.build(params[:offer])
     if @offer.save
       flash[:success] = "Offer created!"
       redirect_to offers_path
     else
-      @owners = Owner.select("id, name").where(:user_id => current_user.id)
       render 'new'
     end
   end
 
   def edit
     @offer = Offer.find(params[:id])
-    @owners = Owner.select("id, name").where(:user_id => current_user.id)
   end
 
   def update
@@ -38,7 +35,6 @@ class OffersController < ApplicationController
       flash[:success] = "Offer updated"
       redirect_to offers_path
     else
-      @owners = Owner.select("id, name").where(:user_id => current_user.id)      
       render 'edit'
     end
   end
@@ -54,4 +50,8 @@ class OffersController < ApplicationController
       @offer = current_user.offers.find_by_id(params[:id])
       redirect_to root_path if @offer.nil?
     end
+
+    def get_owner
+      @owners = Owner.select("id, name").where(user_id: current_user.id)
+    end    
 end

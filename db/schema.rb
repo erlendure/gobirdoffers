@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024195932) do
+ActiveRecord::Schema.define(:version => 20121026203956) do
 
   create_table "bullet_points", :force => true do |t|
     t.integer  "offer_id"
     t.string   "bullet_text"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "sequence"
   end
 
   create_table "categories", :force => true do |t|

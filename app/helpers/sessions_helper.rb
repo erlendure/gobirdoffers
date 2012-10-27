@@ -45,4 +45,8 @@ module SessionsHelper
   def admin_user
     redirect_to(root_url) unless current_user.admin?
   end    
+
+  def get_countries 
+    @countries = Country.select("id, country_name").all
+  end  
 end

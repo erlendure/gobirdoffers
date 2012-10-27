@@ -1,6 +1,8 @@
 class Category < ActiveRecord::Base
   attr_accessible :cat_description, :cat_name, :locale_id
 
+  has_many :offer_categories
+
   validates :cat_description,  presence: true
   validates :cat_name, presence: true  
   validates :locale_id, presence: true      
