@@ -9,7 +9,7 @@ class Offer < ActiveRecord::Base
 
   validates :owner_id, presence: true
 
-  default_scope order: 'offers.created_at DESC'  
+  default_scope order: 'offers.featured DESC, offers.created_at DESC'  
 end
 
 # == Schema Information

@@ -1,0 +1,6 @@
+<% provide(:title, @offers[0].owner.city) %>
+<% @price = "Buy now | $" + @offers[0].price.to_i.to_s %>
+
+<%= render 'featured' %>	
+
+<%= render 'all_offers' %>

@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="featuredBlock">
+	  <div class="featuredContainerRight">
+	    <div class="featuredHeading">
+	      <h3>
+          <span><%= @offers[0].owner.name %></span>
+          <span class="featuredCity"><%= @offers[0].owner.city %></span>
+        </h3>
+        <h1><%= @offers[0].heading %></h1>	  
+        <div class="featuredBanner">
+          <div class="featuredButton">      	
+            <div class="btn-toolbar">
+              <div class="btn-group">
+                <%= link_to @price, '#', class: "btn btn-danger" %>
+              </div>
+              <div class="btn-group">
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                  1 <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <% 3.times do |i| %>
+                  <li><%= link_to i+1, '#' %></li>
+                  <% end %>	  	                  
+                </ul>              
+              </div>            
+            </div>
+          </div>
+          <div class="featuredArrowContainer">
+            <div class="featuredArrow"></div>
+            <div class="text featuredArrowText"><%= @offers[0].discount.to_i %>% off</div>
+            <div class="featuredRightFold"></div>
+          </div>
+        </div>
+        <div class="featuredLeftFold"></div>
+        <div class="featuredPoints">
+         <ul>
+            <li>Learn everything you need to know in order to carry a concealed handgun</li>
+            <li>10-hr class includes instruction, range qualification, range fee, review of paperwork, test, and a free loaner gun for the range</li>
+            <li>Covers use of force, gun safety and storage, dispute resolution, and Texas gun laws</li>
+          </ul>    	
+        </div>
+	    </div>
+      <div class="featuredDetails">
+        <div>
+          <h3>Offer Details</h3>
+          <ul class="featuredList">
+          	<li>
+          	  <div class="floatLeft"><i class="icon-tag"></i></div>
+          	  <span class="rowName">Discount :</span>
+              <span class="rowValue"><%= @offers[0].discount.to_i  %>%</span>              
+          	</li>           
+            <li>
+              <div class="floatLeft"><i class="icon-time"></i></div>
+              <span class="rowName">Time left to buy :</span>
+              <span class="rowValue">3 days 4:52:10</span>              
+            </li>
+            <li>
+              <div class="floatLeft"><i class="icon-calendar"></i></div>
+              <span class="rowName">Redeem  :</span>
+              <span class="rowValue"><%= @offers[0].end_date.strftime("%B %d %Y") %></span>              
+            </li>            
+            <li>
+              <div class="floatLeft"><i class="icon-star"></i></div>
+              <span class="rowName">Presented By :</span>
+              <span class="rowValue">GoBird</span>              
+            </li> 
+            <li>
+              <div class="floatLeft"><i class="icon-share"></i></div>
+              <span class="rowName">Share :</span>
+              <span class="rowValue"></span>              
+            </li>             
+          </ul>
+        </div>
+        <div>
+          <h3>The Deal</h3>
+          <p><%= @offers[0].details %></p> 
+        </div>
+      </div>
+    </div>
+
+    <div class="featuredContainerLeft">
+      <%= link_to image_tag("featured1.png", alt: "Featured", class: "featuredImage"), root_path %>
+      <div class="featuredAddressContainer">
+        <h3>Where to redeem</h3>
+        <div class="mapContainer">
+          <div class="addressesContainer">
+            <div class="addressName">Texan Defender</div>
+              <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=2001+Brushy+Street+Georgetown,+Texas+78626+&amp;aq=&amp;sll=35.299435,-119.311523&amp;sspn=11.360081,23.181152&amp;ie=UTF8&amp;hq=&amp;hnear=2001+Brushy+St,+Georgetown,+Texas+78626&amp;ll=30.626088,-97.677886&amp;spn=0.046826,0.090551&amp;t=m&amp;z=14&amp;output=embed"></iframe>
+            <%= link_to "www.texandefender.com", 'http://www.texandefender.com', class: "addressLink" %>
+            <div class="addressPost">
+              <%= @offers[0].owner.address1 %><br>
+              <%= @offers[0].owner.city %>, <%= @offers[0].owner.state %> 78626<br>
+              <%= @offers[0].owner.phone %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+  	<div class="featuredTermsContainer">
+        <div>
+        	<span><%= @offers[0].terms %></span> 
+        	<a target="_blank" href="#rules"> See the rules that apply to all offers&nbsp;» </a> 
+        </div>
+  	</div>	
+  </div>
+</div>

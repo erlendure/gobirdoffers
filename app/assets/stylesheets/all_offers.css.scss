@@ -1,0 +1,101 @@
+/****************** All Offers Style ******************/
+$all_offers_border: 1px solid;
+
+.offerTop {
+  padding: 20px 20px 10px 20px;
+}
+
+.offerBlock {
+  background: none repeat scroll 0 0 #FFFFFF;
+  width: 100%;
+  border: $all_offers_border rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding-bottom: 10px;
+}
+
+.offerContainer {
+  -moz-transition: all 0.3s ease-out 0s;
+  border: $all_offers_border transparent;
+  float: left;
+  height: 320px;
+  margin: 0 10px 3% 9px;
+  position: relative;
+  white-space: normal;
+  width: 31%;
+
+  .offerCity {
+    color: #999999;
+    font-size: 11px;
+  }
+
+  .offerDetails {
+    padding: 10px;
+  }
+
+  .offerName {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0 !important;
+    overflow: hidden;
+    padding: 0 !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .aDetails {
+    display: block;
+    font: 600 13px/15px "Open Sans";
+    margin: 0;
+    overflow: hidden;
+    padding: 3px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  img {
+    border: $all_offers_border rgba(0, 0, 0, 0.2);
+    height: 216px;
+    margin: 0;
+    padding: 3%;
+    width: 94.5%;
+  }
+
+  a {
+    -moz-transition: all 220ms ease-in-out 0s;
+    color: #333333;
+
+    &:hover {
+      color: #1154CC;
+
+      img {
+        border: $all_offers_border transparent;
+      }
+    }
+  }
+
+  &:hover {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: $all_offers_border rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  }    
+}
+
+.offerContainer * {
+    -moz-transition: all 0.3s ease-out 0s;
+}
+
+.aCursor {
+  cursor: pointer;
+}
+
+.offerBottom {
+  border-bottom: $all_offers_border #EDEDED;
+  border-top: $all_offers_border #EDEDED;
+  clear: both;
+  font-size: 16px;
+  font-weight: lighter;
+  padding: 15px 0;
+  text-align: center;
+}

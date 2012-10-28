@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="offerBlock">
+    <div class="offerTop">
+      <span>More Offers -</span>
+      <%= link_to "See all", '#' %>
+    </div>
+    <% 4.times do |i| %>
+        <%pic = "offer" + (i+1).to_s + ".jpg" %>
+	  	<div class="offerContainer">
+	  	  <div class="offerPic">
+            <%= link_to image_tag(pic, alt: "Google Offers"), root_path, class: "aCursor" %>	            
+	  	  </div>
+	  	  <div class="offerDetails">
+	  	  	<div>
+		  	  <span class="offerName"><%= @offers[i].owner.name %></span>
+		  	</div>
+		  	<div>
+		  	  <%= link_to @offers[i].heading, '#', class: "aDetails" %>
+		  	</div>
+		  	<div class="offerCity">
+		  	  <span><%= @offers[i].owner.city %></span>
+		  	</div>
+	  	  </div>
+	  	</div>
+    <% end %>	  	  
+  	<div class="offerBottom">
+      <%= link_to "See All Offers", '#' %>
+  	</div>    	
+  </div> 
+</div>

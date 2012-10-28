@@ -10,7 +10,7 @@ Gobirdoffers::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :offers, only: [:create, :edit, :destroy]
 
-  root to: 'informational#home'
+  root to: 'consumer#show'
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
@@ -19,10 +19,10 @@ Gobirdoffers::Application.routes.draw do
 
   match '/newoffer',  to: 'offers#new'
 
+  match '/home',    to: 'consumer#show'
 
   match '/about',   to: 'informational#about'
   match '/contact', to: 'informational#contact'
-  match '/home',    to: 'informational#home'
   match '/help',    to: 'informational#help'
   match '/legal',   to: 'informational#legal'
   match '/setting', to: 'informational#setting'  
