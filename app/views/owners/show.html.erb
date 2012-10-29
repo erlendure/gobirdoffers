@@ -2,9 +2,34 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h1>
-        <%= @owner.name %> <%= @owner.email %>
-      </h1>
+      <h1><%= @owner.name %></h1>
+      <p>Offer Count: <%= @owner.offers.count %></p>
+      <address>
+        <span>Address: <%= @owner.address1 %></span>
+        <span>City: <%= @owner.city %></span>
+        <span>State: <%= @owner.state %></span>
+        <span>Zip: <%= @owner.zip %></span>
+
+        <span>Phone: <%= @owner.phone %></span>        
+      <address>
+      <p></p>
+      <span>eMail: <%= @owner.email %></span>        
+      <span>url: <%= @owner.url %></span>   
+      </br>
+      </br>      
+      <strong>Contact Info</strong>  
+      <span>Name: <%= @owner.contact_name %></span>      
+      <address>
+        <span>Address: <%= @owner.contact_address1 %></span>
+        <span>City: <%= @owner.contact_city %></span>
+        <span>State: <%= @owner.contact_state %></span>
+        <span>Zip: <%= @owner.contact_zip %></span>
+
+        <span>Phone: <%= @owner.contact_phone %></span>        
+      <address>
+      <p></p>
+      <span>eMail: <%= @owner.contact_email %></span>        
+      <span>Created by: <%= @owner.user.name %></span>        
     </section>
-  </aside>
+  </aside> 
 </div>

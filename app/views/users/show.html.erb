@@ -3,7 +3,18 @@
   <aside class="span4">
     <section>
       <h1><%= @user.name %></h1>
-      <p>Offer Count: <%= @user.offers.count %></p>      
+      <p>Offer Count: <%= @user.offers.count %></p>
+      <address>
+        <span>Address: <%= @user.address1 %></span>
+        <span>City: <%= @user.city %></span>
+        <span>State: <%= @user.state %></span>
+        <span>Zip: <%= @user.zip %></span>
+
+        <span>Phone: <%= @user.phone %></span>        
+      <address>
+      <p></p>
+      <span>eMail: <%= @user.email %></span>        
+      <span>usl: <%= @user.url %></span>              
     </section>
   </aside> 
 </div>

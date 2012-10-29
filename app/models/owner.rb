@@ -2,6 +2,7 @@ class Owner < ActiveRecord::Base
   attr_accessible :address1, :address2, :address3, :city, :contact_address1, :contact_address2, :contact_address3, :contact_city, :contact_country_id, :contact_email, :contact_name, :contact_phone, :contact_state, :contact_zip, :country_id, :email, :name, :phone, :state, :url, :zip
 
   belongs_to :user
+  
   has_many :offers
 
   before_save { |owner| owner.email = email.downcase }
