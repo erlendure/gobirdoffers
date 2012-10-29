@@ -34,9 +34,9 @@
         <div class="featuredLeftFold"></div>
         <div class="featuredPoints">
          <ul>
-            <li>Learn everything you need to know in order to carry a concealed handgun</li>
-            <li>10-hr class includes instruction, range qualification, range fee, review of paperwork, test, and a free loaner gun for the range</li>
-            <li>Covers use of force, gun safety and storage, dispute resolution, and Texas gun laws</li>
+            <% @bullets[0..3].each do |bullets| %>          
+              <li><%= bullets.bullet_text %></li>
+            <% end %>                   
           </ul>    	
         </div>
 	    </div>
