@@ -1,8 +1,8 @@
 <% provide(:title, "Edit Country") %> 
 <h1>Update Country</h1>
-
 <div class="row">
   <div class="span6 offset3">
+  	<p><%= link_to "All Countries", countries_path %></p>
     <%= form_for(@country) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 

@@ -1,10 +1,9 @@
 <% provide(:title, "Edit offer") %> 
-
 <h1>Update Offer</h1>
-
 <div class="row">
   <div class="span6 offset3">
-  <%= form_for(@offer) do |f| %>
+  	<p><%= link_to "All Offers", offers_path %></p>  	
+    <%= form_for(@offer) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
 	  <%= render 'fields', f: f %>

@@ -1,8 +1,8 @@
 <% provide(:title, 'Create Owner') %>
 <h1>New Owner</h1>
-
 <div class="row">
   <div class="span6 offset3">
+  	<p><%= link_to "All Owners", owners_path %></p>  	  	
     <%= form_for(@owner) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       

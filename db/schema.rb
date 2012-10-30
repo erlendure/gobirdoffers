@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121026203956) do
+ActiveRecord::Schema.define(:version => 20121030051659) do
 
   create_table "bullet_points", :force => true do |t|
     t.integer  "offer_id"
@@ -66,8 +66,8 @@ ActiveRecord::Schema.define(:version => 20121026203956) do
     t.string   "heading"
     t.decimal  "price"
     t.decimal  "discount"
-    t.string   "details"
-    t.string   "terms"
+    t.text     "details",           :limit => 255
+    t.text     "terms",             :limit => 255
     t.boolean  "featured",          :limit => 255
     t.datetime "end_date"
     t.datetime "expire_date_begin"

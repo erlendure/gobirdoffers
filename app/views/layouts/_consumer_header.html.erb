@@ -6,23 +6,7 @@
           <%= link_to image_tag("offers_logo_beta.png", alt: "Google Offers"), root_path, id: "logo" %>	            
         </div>
         <div class="span8">
-          <div class="btn-toolbar">
-            <div class="btn-group">
-              <button class="btn"><%= @offers[0].owner.city %></button>
-              <button class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Los Angeles", '#' %></li>
-                <li><%= link_to "Irvine", '#' %></li>
-                <li><%= link_to "Laguna", '#' %></li>
-                <li class="divider"></li>
-                <li><%= link_to "Don't see your city?", '#' %></li>
-              </ul>
-            </div>
-            <div class="btn-group pull-right">     
-              <a href="#" class="btn" ><i class="icon-edit"></i></a>       
-            </div>        
+          <div class="btn-toolbar">       
             <div class="btn-group pull-right">        
               <%= link_to "Featured Offers", '#', class: "btn active" %>
               <%= link_to "All Offers", '#', class: "btn" %>

@@ -2,6 +2,7 @@
 <div class="row">
   <aside class="span4">
     <section>
+      <p><%= link_to "All Owners", owners_path %></p>         
       <h1><%= @owner.name %></h1>
       <p>Offer Count: <%= @owner.offers.count %></p>
       <address>

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :access_level, :address1, :address2, :address3, :city, :country_id, :email, :name, :phone, :state, :url, :zip, :username, :password, :password_confirmation
+  attr_accessible :admin, :access_level, :address1, :address2, :address3, :city, :country_id, :email, :name, :phone, :state, :url, :zip, :username, :password, :password_confirmation
 
   has_secure_password
 

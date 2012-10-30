@@ -6,19 +6,19 @@
     </div>
 
     <% i = 0 %>
-    <% @offers[1..12].each do |offers| %>
+    <% @offers.each do |offers| %>
         <% i += 1 %>
         <%pic = "offer" + (i).to_s + ".jpg" %>
 	  	<div class="offerContainer">
 	  	  <div class="offerPic">
-            <%= link_to image_tag(pic, alt: "Google Offers"), root_path, class: "aCursor" %>	            
+            <%= link_to image_tag(pic, alt: "Google Offers"), home_path(offers.id), class: "aCursor" %>	            
 	  	  </div>
 	  	  <div class="offerDetails">
 	  	  	<div>
 		  	  <span class="offerName"><%= offers.owner.name %></span>
 		  	</div>
 		  	<div>
-		  	  <%= link_to offers.heading, '#', class: "aDetails" %>
+		  	  <%= link_to offers.heading, home_path(offers.id), class: "aDetails" %>
 		  	</div>
 		  	<div class="offerCity">
 		  	  <span><%= offers.owner.city %></span>
