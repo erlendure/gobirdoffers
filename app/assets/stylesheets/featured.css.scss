@@ -59,6 +59,9 @@ $terms-bckgrnd-color:#E6E4E4;
   h5 {
     margin-bottom:-3px;
   }
+  p {
+    margin: 10px 0px 10px 0px;
+  }
 }
 
 .featuredAttr {
@@ -75,6 +78,10 @@ $terms-bckgrnd-color:#E6E4E4;
   padding:0px 10px 0px 15px;
   @include min_height_90;
   border-right:1px solid $featured-border-color;
+  ul {
+    margin:12px 0;
+	padding-left: 40px;
+  }
 }
 
 .featuredDetails {
@@ -84,6 +91,9 @@ $terms-bckgrnd-color:#E6E4E4;
   @include min_height_90; 
   border-left:1px solid $featured-border-color;
   margin-left:-1px;
+  p {
+    margin:10px 0px;
+  }
 }
 
 .featuredTerms {

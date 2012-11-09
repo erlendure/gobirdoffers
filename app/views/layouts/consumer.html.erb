@@ -2,14 +2,14 @@
 <html class="consumer">
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= csrf_meta_tags %>	
+    <%= csrf_meta_tags %>
     <%= javascript_include_tag "application" %>
-    <%= render 'layouts/shim' %>    
+    <%= render 'layouts/shim' %>
     <%= stylesheet_link_tag    "application", media: "all" %>
   </head>
   <body>
-    <%= render 'layouts/consumer_header' %>
+    <%= render 'layouts/test_header' %>
     <%= yield %>
-    <%= render 'layouts/consumer_footer' %>    
+    <%= render 'layouts/test_footer' %>	
   </body>
 </html>

@@ -1,6 +1,3 @@
 <% provide(:title, "Iceland") %>
-<% @price = "Buy now | $" + @featured.price.to_i.to_s %>
-
-<%= render 'featured' %>	
-
-<%= render 'all_offers' %>
+<%= if @all != 1 then render 'featured' end %>
+<%= render 'offerlist' %>

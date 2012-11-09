@@ -1,107 +1,52 @@
 <div class="container">
   <div class="featuredBlock">
-	  <div class="featuredContainerRight">
-	    <div class="featuredHeading">
-	      <h3>
-          <span><%= @featured.owner.name %></span>
-          <span class="featuredCity"><%= @featured.owner.city %></span>
-        </h3>
-        <h1><%= @featured.heading %></h1>	  
-        <div class="featuredBanner">
-          <div class="featuredButton">      	
-            <div class="btn-toolbar">
-              <div class="btn-group">
-                <%= link_to @price, '#', class: "btn btn-danger" %>
-              </div>
-              <div class="btn-group">
-                <button class="btn dropdown-toggle" data-toggle="dropdown">
-                  1 <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <% 3.times do |i| %>
-                  <li><%= link_to i+1, '#' %></li>
-                  <% end %>	  	                  
-                </ul>              
-              </div>            
-            </div>
-          </div>
-          <div class="featuredArrowContainer">
-            <div class="featuredArrow"></div>
-            <div class="text featuredArrowText"><%= @featured.discount.to_i %>% off</div>
-            <div class="featuredRightFold"></div>
-          </div>
-        </div>
-        <div class="featuredLeftFold"></div>
-        <div class="featuredPoints">
-         <ul>
-            <% @bullets[0..3].each do |bullets| %>          
-              <li><%= bullets.bullet_text %></li>
-            <% end %>                   
-          </ul>    	
-        </div>
-	    </div>
-      <div class="featuredDetails">
-        <div>
-          <h3>Offer Details</h3>
-          <ul class="featuredList">
-          	<li>
-          	  <div class="floatLeft"><i class="icon-tag"></i></div>
-          	  <span class="rowName">Discount :</span>
-              <span class="rowValue"><%= @featured.discount.to_i  %>%</span>              
-          	</li>           
-            <li>
-              <div class="floatLeft"><i class="icon-time"></i></div>
-              <span class="rowName">Time left to buy :</span>
-              <span class="rowValue">3 days 4:52:10</span>              
-            </li>
-            <li>
-              <div class="floatLeft"><i class="icon-calendar"></i></div>
-              <span class="rowName">Redeem  :</span>
-              <span class="rowValue"><%= @featured.end_date.strftime("%B %d %Y") %></span>              
-            </li>            
-            <li>
-              <div class="floatLeft"><i class="icon-star"></i></div>
-              <span class="rowName">Presented By :</span>
-              <span class="rowValue">GoBird</span>              
-            </li> 
-            <li>
-              <div class="floatLeft"><i class="icon-share"></i></div>
-              <span class="rowName">Share :</span>
-              <span class="rowValue"></span>              
-            </li>             
-          </ul>
-        </div>
-        <div>
-          <h3>The Deal</h3>
-          <p><%= @featured.details %></p> 
-        </div>
-      </div>
+    <div class="featuredHeading">  
+      <h2><%= @featured.heading %></h2>
     </div>
-
-    <div class="featuredContainerLeft">
-      <%= link_to image_tag("featured1.png", alt: "Featured", class: "featuredImage"), root_path %>
-      <div class="featuredAddressContainer">
-        <h3>Where to redeem</h3>
-        <div class="mapContainer">
-          <div class="addressesContainer">
-            <div class="addressName">Texan Defender</div>
-              <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=2001+Brushy+Street+Georgetown,+Texas+78626+&amp;aq=&amp;sll=35.299435,-119.311523&amp;sspn=11.360081,23.181152&amp;ie=UTF8&amp;hq=&amp;hnear=2001+Brushy+St,+Georgetown,+Texas+78626&amp;ll=30.626088,-97.677886&amp;spn=0.046826,0.090551&amp;t=m&amp;z=14&amp;output=embed"></iframe>
-            <%= link_to "www.texandefender.com", 'http://www.texandefender.com', class: "addressLink" %>
-            <div class="addressPost">
-              <%= @featured.owner.address1 %><br>
-              <%= @featured.owner.city %>, <%= @featured.owner.state %> 78626<br>
-              <%= @featured.owner.phone %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>    
-
-  	<div class="featuredTermsContainer">
-        <div>
-        	<span><%= @featured.terms %></span> 
-        	<a target="_blank" href="#rules"> See the rules that apply to all offers&nbsp;» </a> 
-        </div>
-  	</div>	
+    <div class="featuredPic">  
+      <%= link_to image_tag("16o.jpg", alt: "Featured", class: "featuredImage"), "#" %>
+    </div>
+    <div class="featuredAttributes">
+      <div class="featuredAttr">
+        <p>Value</p>
+        <h4>$<%= @featured.price.to_i.to_s %></h4>
+	  </div>
+      <div class="featuredAttr">	  
+        <p>Discount</p>
+        <h4><%= @featured.discount.to_i %>%</h4>
+	  </div>
+      <div class="featuredAttr">	  	  
+        <p>Savings</p>
+        <h4>$200</h4>
+	  </div>
+      <div class="featuredAttr">	  	  
+        <p>Redeem by</p>
+        <h4><%= @featured.end_date.strftime("%b. %d %Y") %></h4>
+	  </div>
+      <div class="featuredAttr">	  	  
+	    <p>Where to redeem</p>
+	    <h5><%= @featured.owner.name %></h5>
+	    <span class="addr"><%= @featured.owner.address1 %></span>
+	    <span class="addr"><%= @featured.owner.zip %> <%= @featured.owner.city %></span>
+  	    <%= link_to @featured.owner.url, 'http://www.mbl.is', class: "addr" %>		
+		</br>
+	  </div>	  
+    </div>
+    <div class="featuredBullets">  
+      <h4>Features</h4>
+      <ul>
+	    <% @bullets[0..3].each do |bullets| %>  
+          <li><%= bullets.bullet_text %></li>
+		<% end %>
+      </ul>
+    </div>
+    <div class="featuredDetails"> 
+      <h4>Details</h4>
+      <p><%= @featured.heading %></p>
+    </div>	
+    <div class="clearfix"></div>
+    <div class="featuredTerms">  
+      <span><%= @featured.terms %></span>
+    </div>	
   </div>
 </div>

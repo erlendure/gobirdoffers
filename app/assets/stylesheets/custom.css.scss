@@ -22,7 +22,6 @@ body {
   background-color: transparent;    
 }
 
-
 h1, h2, h3, h4, h5, h6 {
   margin:10px 0;
   font-family:inherit;
@@ -88,7 +87,7 @@ h6 {
   }
 }
 
-.thumbnails {
+.thmbnails {
   margin:0;
   padding:0;  
   list-style: none;
@@ -102,17 +101,17 @@ h6 {
   }
 }
 
-.thumbnails:before, .thumbnails:after {
+.thmbnails:before, .thmbnails:after {
   display: table;
   line-height: 0;
   content: "";
 }
 
-.thumbnails:after {
+.thmbnails:after {
   clear: both;
 }
 
-.thumbnail {
+.thmbnail {
   display: block;
   padding: 4px;
   line-height: 20px;

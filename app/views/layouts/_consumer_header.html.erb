@@ -1,20 +1,15 @@
-<header class="navbar navbar-fixed-top container">
-  <div class="navbar-inner">
-    <div class="container">
-      <div class="row">
-        <div class="span4">
-          <%= link_to image_tag("offers_logo_beta.png", alt: "Google Offers"), root_path, id: "logo" %>	            
-        </div>
-        <div class="span8">
-          <div class="btn-toolbar">       
-            <div class="btn-group pull-right">        
-              <%= link_to "Featured Offers", '#', class: "btn active" %>
-              <%= link_to "All Offers", '#', class: "btn" %>
-              <%= link_to "My Offers", '#', class: "btn" %> 
-            </div>
-          </div>
-        </div>
-      </div>
+<header class="headerBlock container">
+  <div class="headerContainer">
+    <div class="navigate">
+    <div id="logo">
+	  <h1>GoBirdOffers</h1>
+	</div>
+      <ul>
+        <li>
+		  <%= if @all == 1 then link_to "Show Featured", home_path else link_to "Show All", home_path(0) end %>
+		</li>
+      </ul>
     </div>
+    <div class="clearfix"></div>	
   </div>
 </header>
