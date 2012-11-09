@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="offerlistBlock">
+    <div class="offerlistHeading">
+	  <h4>
+        <%= if @all == 1 then 'All Offers' else 'Latest Offers' end %>	
+      </h4>
+    </div>
+    <div class="offerlistContainer">  	
+    <ul class="thumbnails">
+      <% i = 0 %>
+      <% @offers.each do |offers| %>
+      <% i += 1 %>
+      <% pic = (i).to_s + "o" + ".jpg" %>
+      <li>
+        <div class="thumbnail">
+          <%= link_to image_tag(pic, alt: "Offer"), test_path(offers.id) %>
+		  <div class="caption">
+		  	<%= link_to offers.heading, test_path(offers.id) %>
+		  </div>
+        </div>
+      </li>
+      <% end %>
+      <% @offers.each do |offers| %>
+      <% i += 1 %>
+      <% pic = (i).to_s + "o" + ".jpg" %>
+      <li>
+        <div class="thumbnail">
+          <%= link_to image_tag(pic, alt: "Offer"), test_path(offers.id) %>
+		  <div class="caption">
+		  	<%= link_to offers.heading, test_path(offers.id) %>
+		  </div>
+        </div>
+      </li>
+      <% end %>	  
+    </ul>
+	</div>
+  </div>
+</div>

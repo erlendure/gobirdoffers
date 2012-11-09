@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="featuredBlock">
+    <div class="featuredHeading">  
+      <h2><%= @featured.heading %></h2>
+    </div>
+    <div class="featuredPic">  
+      <%= link_to image_tag("16o.jpg", alt: "Featured", class: "featuredImage"), "#" %>
+    </div>
+    <div class="featuredAttributes">
+      <div class="featuredAttr">
+        <p>Value</p>
+        <h4>$<%= @featured.price.to_i.to_s %></h4>
+	  </div>
+      <div class="featuredAttr">	  
+        <p>Discount</p>
+        <h4><%= @featured.discount.to_i %>%</h4>
+	  </div>
+      <div class="featuredAttr">	  	  
+        <p>Savings</p>
+        <h4>$200</h4>
+	  </div>
+      <div class="featuredAttr">	  	  
+        <p>Redeem by</p>
+        <h4><%= @featured.end_date.strftime("%b. %d %Y") %></h4>
+	  </div>
+      <div class="featuredAttr">	  	  
+	    <p>Where to redeem</p>
+	    <h5><%= @featured.owner.name %></h5>
+	    <span class="addr"><%= @featured.owner.address1 %></span>
+	    <span class="addr"><%= @featured.owner.zip %> <%= @featured.owner.city %></span>
+  	    <%= link_to "www.mbl.is", 'http://www.mbl.is', class: "addr" %>		
+		</br>
+	  </div>	  
+    </div>
+    <div class="featuredBullets">  
+      <h4>Features</h4>
+      <ul>
+	    <% @bullets[0..3].each do |bullets| %>  
+          <li><%= bullets.bullet_text %></li>
+		<% end %>
+      </ul>
+    </div>
+    <div class="featuredDetails"> 
+      <h4>Details</h4>
+      <p><%= @featured.heading %></p>
+    </div>	
+    <div class="clearfix"></div>
+    <div class="featuredTerms">  
+      <span><%= @featured.terms %></span>
+    </div>	
+  </div>
+</div>

@@ -18,6 +18,8 @@ Gobirdoffers::Application.routes.draw do
 
   match '/newoffer',  to: 'offers#new'
 
+  match '/test',    to: 'test#test'
+  
   match '/home',    to: 'consumer#show'
 
   match '/about',   to: 'informational#about'
