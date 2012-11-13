@@ -22,11 +22,12 @@ Gobirdoffers::Application.routes.draw do
   
   match '/home',    to: 'consumer#show'
 
-  match '/about',   to: 'informational#about'
-  match '/contact', to: 'informational#contact'
-  match '/help',    to: 'informational#help'
-  match '/legal',   to: 'informational#legal'
-  match '/setting', to: 'informational#setting'  
+  match '/about',    to: 'informational#about'
+  match '/contact',  to: 'informational#contact'
+  match '/help',     to: 'informational#help'
+  match '/legal',    to: 'informational#legal'
+  
+  match '/settings', to: 'admin#settings'
  
   # The priority is based upon order of creation:
   # first created -> highest priority.
