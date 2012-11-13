@@ -1,14 +1,5 @@
 <% provide(:title, 'Create Country') %>
-<h1>New Country</h1>
-<div class="row">
-  <div class="span6 offset3">
-    <p><%= link_to "All Countries", countries_path %></p>
-    <%= form_for(@country) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
 
-      <%= render 'fields', f: f %>
+<%= render 'shared/admin_header', heading: 'New Country', btn_txt: 'Show All', path: countries_path %>
 
-      <%= f.submit "Create new Country", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'fields', btn_txt: 'Create New' %>

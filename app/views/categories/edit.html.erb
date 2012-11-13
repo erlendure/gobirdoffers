@@ -1,14 +1,5 @@
 <% provide(:title, "Edit Category") %> 
-<h1>Update Category</h1>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@category) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+<%= render 'shared/admin_header', heading: 'Update Category', btn_txt: 'Show All', path: categories_path %>
 
-      <%= render 'fields', f: f %>
-
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'fields', btn_txt: 'Save Changes' %>

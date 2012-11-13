@@ -1,8 +1,20 @@
-<%= f.label :cat_name %>
-<%= f.text_field :cat_name %>   
-    
-<%= f.label :cat_description %>
-<%= f.text_field :cat_description %>      
+<div class="row">
+  <div class="span6 offset1">
+    <%= form_for(@category) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+	  
+		<%= f.label :cat_name %>
+		<%= f.text_field :cat_name %>   
+			
+		<%= f.label :cat_description %>
+		<%= f.text_field :cat_description %>      
 
-<%= f.label :locale_id %>
-<%= f.number_field :locale_id %>
+		<%= f.label :locale_id %>
+		<%= f.number_field :locale_id %>
+
+	  </br></br>
+			
+      <%= f.submit btn_txt, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

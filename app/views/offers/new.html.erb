@@ -1,14 +1,5 @@
-<%= provide(:title, 'New Offer') %>
-<h1>New Offer</h1>
-<div class="row">
-  <div class="span6 offset3">
-  	<p><%= link_to "All Offers", offers_path %></p>  	
-    <%= form_for(@offer) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+<% provide(:title, "New Offer") %> 
 
-      <%= render 'fields', f: f %>
+<%= render 'shared/admin_header', heading: 'New Offer', btn_txt: 'Show All', path: offers_path %>
 
-      <%= f.submit "Create new offer", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'fields', btn_txt: 'Create New' %>

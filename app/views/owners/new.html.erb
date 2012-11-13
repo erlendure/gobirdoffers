@@ -1,14 +1,5 @@
 <% provide(:title, 'Create Owner') %>
-<h1>New Owner</h1>
-<div class="row">
-  <div class="span6 offset3">
-  	<p><%= link_to "All Owners", owners_path %></p>  	  	
-    <%= form_for(@owner) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      
-      <%= render 'fields', f: f %>
 
-      <%= f.submit "Create new Owner", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'shared/admin_header', heading: 'New Owner', btn_txt: 'Show All', path: owners_path %>
+
+<%= render 'fields', btn_txt: 'Create New' %>

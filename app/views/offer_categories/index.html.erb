@@ -1,11 +1,12 @@
 <% provide(:title, 'Category Points') %>
-<h1>Category List</h1>
-<p>Offer: <%= @offer.heading %> </p>
+
+<%= render 'shared/admin_header', heading: @offer.heading, btn_txt: 'Show All', path: offers_path %>
+
 <table class="table table-hover">
   <thead>
     <th>Category</th>
-    <th>Edit</th>
-    <th>Delete</th>
+    <th class="tdMid">Edit</th>
+    <th class="tdMid">Delete</th>
   </thead>
   <tbody>  
   	<%= render @offer_categories unless @offer_categories.nil? %>
@@ -13,7 +14,7 @@
 </table>	
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span6 offset1">
 	<%= form_for(@ocategories) do |f| %>
 	  <%= render 'shared/error_messages', object: f.object %>
 
@@ -21,6 +22,8 @@
 
       <%= f.hidden_field :offer_id, :value => @offer.id  %>
 
+	  </br></br>
+	  
       <%= f.submit "Create new Category", class: "btn btn-large btn-primary" %>
 	<% end %>	
   </div>

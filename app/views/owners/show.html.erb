@@ -1,36 +1,32 @@
 <% provide(:title, @owner.name) %>
+
+<%= render 'shared/admin_header', heading: @owner.name, btn_txt: 'Show All', path: owners_path %>
+
 <div class="row">
-  <aside class="span4">
-    <section>
-      <p><%= link_to "All Owners", owners_path %></p>         
-      <h1><%= @owner.name %></h1>
-      <p>Offer Count: <%= @owner.offers.count %></p>
-      <address>
-        <span>Address: <%= @owner.address1 %></span>
-        <span>City: <%= @owner.city %></span>
-        <span>State: <%= @owner.state %></span>
-        <span>Zip: <%= @owner.zip %></span>
+  <div class="span5 offset1">
+    <p><strong>Offer Count:</strong> <%= @owner.offers.count %></p>
+    <address>
+      <p><strong>Address:</strong> <%= @owner.address1 %></p>
+      <p><strong>City:</strong> <%= @owner.city %></p>
+      <p><strong>State:</strong> <%= @owner.state %></p>
+      <p><strong>Zip:</strong> <%= @owner.zip %></p>
+      <p><strong>Phone:</strong> <%= @owner.phone %></p>        
+    <address>
 
-        <span>Phone: <%= @owner.phone %></span>        
-      <address>
-      <p></p>
-      <span>eMail: <%= @owner.email %></span>        
-      <span>url: <%= @owner.url %></span>   
-      </br>
-      </br>      
-      <strong>Contact Info</strong>  
-      <span>Name: <%= @owner.contact_name %></span>      
-      <address>
-        <span>Address: <%= @owner.contact_address1 %></span>
-        <span>City: <%= @owner.contact_city %></span>
-        <span>State: <%= @owner.contact_state %></span>
-        <span>Zip: <%= @owner.contact_zip %></span>
+    <p><strong>eMail:</strong> <%= @owner.email %></p>        
+    <p><strong>Web:</strong> <%= @owner.url %></p>              
 
-        <span>Phone: <%= @owner.contact_phone %></span>        
-      <address>
-      <p></p>
-      <span>eMail: <%= @owner.contact_email %></span>        
-      <span>Created by: <%= @owner.user.name %></span>        
-    </section>
-  </aside> 
+  </div>
+  <div class="span5 offset1">
+    <address>
+      <p><strong>Contact Name:</strong> <%= @owner.contact_name %></p>	
+      <p><strong>Contact Address:</strong> <%= @owner.contact_address1 %></p>
+      <p><strong>Contact City:</strong> <%= @owner.contact_city %></p>
+      <p><strong>Contact State:</strong> <%= @owner.contact_state %></p>
+      <p><strong>Contact Zip:</strong> <%= @owner.contact_zip %></p>
+      <p><strong>Contact Phone:</strong> <%= @owner.contact_phone %></p>        
+    <address>
+
+    <p><strong>Contact eMail:</strong> <%= @owner.contact_email %></p>        
+  </div> 
 </div>

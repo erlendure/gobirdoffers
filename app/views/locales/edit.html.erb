@@ -1,14 +1,5 @@
 <% provide(:title, "Edit Locale") %> 
-<h1>Update Locale</h1>
-<div class="row">
-  <div class="span6 offset3">
-    <p><%= link_to "All Locales", locales_path %></p>
-    <%= form_for(@locale) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
 
-      <%= render 'fields', f: f %>
+<%= render 'shared/admin_header', heading: 'Update Locale', btn_txt: 'Show All', path: locales_path %>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'fields', btn_txt: 'Save Changes' %>

@@ -3,14 +3,14 @@ class ConsumerController < ApplicationController
     @par_offer_id = params[:format]
 	@all = 0
   	if @par_offer_id.nil?
-  	  @featured = Offer.first
-  	  @offers = Offer.limit(12).offset(1)
+  	  @featured = Offer.limit(1).find_by_active(true)
+  	  @offers = Offer.limit(12).offset(1).where('active = ?',true)
 	elsif @par_offer_id != '0'
-  	  @featured = Offer.find(@par_offer_id) 		
-  	  @offers = Offer.where('id != ?',@par_offer_id)
+  	  @featured = Offer.find(@par_offer_id)
+  	  @offers = Offer.where('id != ? AND active = ?',@par_offer_id, true)
 	else 
-  	  @featured = Offer.first
-  	  @offers = Offer.limit(60)
+  	  @featured = Offer.limit(1).find_by_active(true)
+  	  @offers = Offer.limit(60).where('active = ?',true)
 	  @all = 1
   	end
 

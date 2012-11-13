@@ -50,10 +50,10 @@ class UsersController < ApplicationController
   private
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(setting_path) unless current_user?(@user)
+      redirect_to(settings_path) unless current_user?(@user)
     end
 
     def user_signed_in 
-      redirect_to(setting_path) if signed_in?
+      redirect_to(settings_path) if signed_in?
     end
 end

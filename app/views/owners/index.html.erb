@@ -1,8 +1,8 @@
 <% provide(:title, 'All owners') %>
-<h1>All owners</h1>
+
+<%= render 'shared/admin_header', heading: 'All Owners', btn_txt: 'Add Owner', path: new_owner_path %>
 
 <%= will_paginate %>
-<p><%= link_to "New Owner", new_owner_path %></p>
 
 <table class="table table-hover">
   <thead>
@@ -10,8 +10,8 @@
     <th>eMail</th>    
     <th>Contact Name</th>
     <th>Contact eMail</th>
-    <th>Edit</th>
-    <th>Delete</th>
+    <th class="tdMid">Edit</th>
+    <th class="tdMid">Delete</th>
   </thead>
   <tbody>
   	<%= render @owners %>

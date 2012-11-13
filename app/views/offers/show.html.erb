@@ -1,12 +1,19 @@
 <% provide(:title, @offer.heading) %>
+
+<%= render 'shared/admin_header', heading: @offer.heading, btn_txt: 'Show All', path: offers_path %>
+
 <div class="row">
-  <aside class="span4">
-    <section>
-      <p><%= link_to "All Offers", offers_path %></p>  	
-      <h1><%= @offer.heading %></h1>
-      <p>Owner: <%= @offer.owner.name %></p>      
-      <p>Created by: <%= @offer.owner.user.name %></p>
-      <p>Posted : <%= @offer.created_at %></p>      
-    </section>
-  </aside>
+  <div class="span5 offset1">
+    <p><strong>Owner Name:</strong> <%= link_to @offer.owner.name, owner_path(@offer.owner.id) %></p>
+    <p><strong>Created By:</strong> <%= link_to @offer.owner.user.name, user_path(@offer.owner.user.id) %> <%= time_ago_in_words(@offer.created_at) %> ago</p>	
+    <p><strong>Active:</strong> <%= @offer.active %></p>
+    <p><strong>Featured:</strong> <%= @offer.featured %></p>	
+    <p><strong>Terms:</strong> <%= @offer.terms %></p>	
+  </div>
+  <div class="span5 offset1">
+    <p><strong>Price:</strong> <%= @offer.price %></p>
+    <p><strong>Discount:</strong> <%= @offer.discount %></p>	
+    <p><strong>End Date:</strong> <%= @offer.end_date %></p>     		
+    <p><strong>Details:</strong> <%= @offer.details %></p>     
+  </div> 
 </div>

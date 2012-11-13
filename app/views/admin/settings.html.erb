@@ -1,20 +1,38 @@
 <% provide(:title, 'Settings') %>
 <h1>System Settings</h1>
-<p>
-  Users: <%= link_to "Show", users_path %>
-</p>
-<p>
-  Locales: <%= link_to "Show", locales_path %> - <%= link_to "New", new_locale_path %>
-</p>
-<p>
-  Countries: <%= link_to "Show", countries_path %> - <%= link_to "New", new_country_path %>
-</p>
-<p>
-  Categories: <%= link_to "Show", categories_path %> - <%= link_to "New", new_category_path %>
-</p>
-<p>
-  Onwers: <%= link_to "Show", owners_path %> - <%= link_to "New", new_owner_path %>
-</p>
-<p>
-  Offers: <%= link_to "Show", offers_path %> - <%= link_to "New", new_offer_path %>
-</p>
+</br>
+<table class="table table-hover">
+  <thead>
+    <th>Entity</th>
+    <th>Description</th>
+    <th class="tdMid">New</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= link_to "Offers", offers_path %></td>	  
+      <td>Offers listed on site</td>
+      <td class="tdMid"><%= link_to "", new_offer_path , class: "icon-plus-sign" %></td>
+    </tr>  
+    <tr>
+      <td><%= link_to "Onwers", owners_path %></td>	  	  
+      <td>Onwers of the offers</td>
+      <td class="tdMid"><%= link_to "", new_owner_path , class: "icon-plus-sign" %></td>
+    </tr>  
+    <tr>
+      <td><%= link_to "Categories", categories_path %></td>	  	  	  
+      <td>Categories associated to offers</td>
+      <td class="tdMid"><%= link_to "", new_category_path , class: "icon-plus-sign" %></td>
+    </tr>		
+    <tr>
+      <td><%= link_to "Countries", countries_path %></td>	  	  	  
+      <td>Countries to populate country drop down selections</td>
+      <td class="tdMid"><%= link_to "", new_country_path , class: "icon-plus-sign" %></td>
+    </tr>		
+    <tr>
+      <td><%= link_to "Users", users_path %></td>	  	  	  
+      <td>User that have access to system</td>
+      <td class="tdMid"></td>
+    </tr>
+  </tbody>	
+</table>
+
