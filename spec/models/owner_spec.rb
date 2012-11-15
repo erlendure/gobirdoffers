@@ -1,13 +1,8 @@
-require 'spec_helper'
-
-describe Owner do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
 # == Schema Information
 #
 # Table name: owners
 #
-#  id                 :integer         not null, primary key
+#  id                 :integer          not null, primary key
 #  name               :string(255)
 #  address1           :string(255)
 #  address3           :string(255)
@@ -29,8 +24,13 @@ end
 #  contact_phone      :string(255)
 #  contact_country_id :integer
 #  contact_email      :string(255)
-#  locale_id          :integer
-#  created_at         :datetime        not null
-#  updated_at         :datetime        not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  user_id            :integer
 #
 
+require 'spec_helper'
+
+describe Owner do
+  pending "add some examples to (or delete) #{__FILE__}"
+end

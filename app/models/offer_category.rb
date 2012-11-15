@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: offer_categories
+#
+#  id          :integer          not null, primary key
+#  category_id :integer
+#  offer_id    :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class OfferCategory < ActiveRecord::Base
   attr_accessible :category_id, :offer_id
 
@@ -8,14 +19,3 @@ class OfferCategory < ActiveRecord::Base
   validates :category_id, presence: true  
 
 end
-# == Schema Information
-#
-# Table name: offer_categories
-#
-#  id          :integer         not null, primary key
-#  category_id :integer
-#  offer_id    :integer
-#  created_at  :datetime        not null
-#  updated_at  :datetime        not null
-#
-

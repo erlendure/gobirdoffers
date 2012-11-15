@@ -13,13 +13,15 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+	@category = Category.all
+	@ocategories = OfferCategory.new
   end  
 
   def create
     @offer = current_user.offers.build(params[:offer])
     if @offer.save
       flash[:success] = "Offer created!"
-      redirect_to offers_path
+      redirect_to bullet_points_path(@offer.id)
     else
       render 'new'
     end

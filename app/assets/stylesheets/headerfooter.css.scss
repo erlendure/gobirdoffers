@@ -5,6 +5,7 @@ $headerfooter-border-color:yellow;
 $headerfooter-bckgrnd-color:black;
 $headerfooter-char-color:#F3F2F2;
 $headerfooter-hover-color:yellow;
+$color_char:#2E2E2E;
 
 
 .headerBlock {
@@ -45,7 +46,7 @@ $headerfooter-hover-color:yellow;
 
 .navigate {
   ul {
-    margin: 23px 0 10px 0;
+    margin: 17px 0 10px 0;
     float:right;
     li {
       display:block;	
@@ -54,7 +55,7 @@ $headerfooter-hover-color:yellow;
       margin-right:20px;	  
 	  a { 
         text-decoration:none;
-		color:$headerfooter-char-color;	
+		color:$color_char;	
 	    &:hover { 
 		  color:$headerfooter-hover-color;
 		}

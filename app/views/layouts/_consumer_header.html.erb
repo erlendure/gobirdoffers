@@ -6,7 +6,7 @@
 	</div>
       <ul>
         <li>
-		  <%= if @all == 1 then link_to "Show Featured", home_path else link_to "Show All", home_path(0) end %>
+		  <%= if @all == 1 then link_to "Show Featured", home_path, class:"btn" else link_to "Show All", home_path(0), class:"btn" end %>
 		</li>
       </ul>
     </div>
