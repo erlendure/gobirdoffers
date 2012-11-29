@@ -77,14 +77,17 @@ footer {
   font-size: 12px; 
   border-top:solid 2px $headerfooter-border-color;    
   box-shadow:$container-box-shadow;
+  
+/*  
   background-color:$headerfooter-bckgrnd-color;
   background:url(bckgrnd5.jpg) repeat; 
+*/
 
   background-color: #BCBBC6;
-  background-image: -moz-linear-gradient(top, #ffffff, #BCBBC6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#BCBBC6));
-  background-image: -webkit-linear-gradient(top, #ffffff, #BCBBC6);
-  background-image: -o-linear-gradient(top, #ffffff, #BCBBC6);
+  background-image: -moz-linear-gradient(top, #000000, #BCBBC6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000000), to(#BCBBC6));
+  background-image: -webkit-linear-gradient(top, #000000, #BCBBC6);
+  background-image: -o-linear-gradient(top, #000000, #BCBBC6);
   background-image: linear-gradient(to bottom, #000000, #BCBBC6);    
 
   a {
