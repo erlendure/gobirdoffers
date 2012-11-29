@@ -9,6 +9,9 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+  	@bullets = BulletPoint.find_all_by_offer_id(@offer.id)	
+  	@categories = OfferCategory.find_all_by_offer_id(@offer.id)		
+  	@images = Image.find_all_by_offer_id(@offer.id)			
   end
 
   def new

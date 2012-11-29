@@ -7,6 +7,7 @@
   <td><%= link_to offer.owner.user.name, user_path(offer.owner.user.id) %></td>
   <td class="tdMid"><%= link_to 'Show', bullet_points_path(offer.id) %></td>  
   <td class="tdMid"><%= link_to 'Show', offer_categories_path(offer.id) %></td>    
+  <td class="tdMid"><%= link_to 'Show', images_path(offer.id) %></td>      
   <td class="tdMid"><%= link_to '', edit_offer_path(offer) , class: "icon-edit" %></td>
   <td class="tdMid"><% if current_user.admin? %>
   	  <%= link_to '', offer, method: :delete, confirm: "You sure?", class: "icon-remove" %>

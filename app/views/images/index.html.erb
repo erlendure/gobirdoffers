@@ -1,0 +1,31 @@
+<% provide(:title, 'Images') %>
+
+<%= render 'shared/admin_header', heading: @offer.heading, btn_txt: 'Show All', path: offers_path %>
+
+<table class="table table-hover">
+  <thead>
+	<th>Image</th>  
+    <th>URL</th>
+    <th class="tdMid">Edit</th>
+    <th class="tdMid">Delete</th>
+  </thead>
+  <tbody>  
+  	<%= render @images unless @images.nil? %>
+  </tbody>	  	
+</table>	
+
+<div class="row">
+  <div class="span6 offset1">
+	<%= form_for(@bpoints) do |f| %>
+	  <%= render 'shared/error_messages', object: f.object %>
+
+      <%= render 'fields', f: f %>
+
+      <%= f.hidden_field :offer_id, :value => @offer.id  %>
+
+	  </br></br>
+	  
+      <%= f.submit "Create new Image", class: "btn btn-primary" %>
+	<% end %>	
+  </div>
+</div>

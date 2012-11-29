@@ -16,12 +16,19 @@ $color_char:#2E2E2E;
   position:fixed;
   z-index:1030; 
 
-  background-color:$headerfooter-bckgrnd-color;
+  /* background-color:$headerfooter-bckgrnd-color; */
+  /* background:url(bckgrnd6.jpg) repeat; */  
   box-shadow:$container-box-shadow;
-  background:url(bckgrnd6.jpg) repeat; 
   margin-left:auto;
   margin-right:auto; 
   border-bottom:solid 2px $headerfooter-border-color;
+
+  background-color: #4CBDFF;
+  background-image: -moz-linear-gradient(top, #ffffff, #4CBDFF);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#4CBDFF));
+  background-image: -webkit-linear-gradient(top, #ffffff, #4CBDFF);
+  background-image: -o-linear-gradient(top, #ffffff, #4CBDFF);
+  background-image: linear-gradient(to bottom, #ffffff, #D4D4DF);  
 }
 
 .headerContainer {
@@ -38,7 +45,7 @@ $color_char:#2E2E2E;
     color:$headerfooter-char-color;		
   }
   img {
-    width:237px;
+    width:270px;
 	height:55px;
 	margin-right:10px;
   }
@@ -71,7 +78,14 @@ footer {
   border-top:solid 2px $headerfooter-border-color;    
   box-shadow:$container-box-shadow;
   background-color:$headerfooter-bckgrnd-color;
-  background:url(bckgrnd5.jpg) repeat;   
+  background:url(bckgrnd5.jpg) repeat; 
+
+  background-color: #4CBDFF;
+  background-image: -moz-linear-gradient(top, #ffffff, #4CBDFF);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#4CBDFF));
+  background-image: -webkit-linear-gradient(top, #ffffff, #4CBDFF);
+  background-image: -o-linear-gradient(top, #ffffff, #4CBDFF);
+  background-image: linear-gradient(to bottom, #000000, #BCBBC6);    
 
   a {
 	color:$headerfooter-char-color;

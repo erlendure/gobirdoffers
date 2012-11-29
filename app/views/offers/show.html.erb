@@ -17,3 +17,24 @@
     <p><strong>Details:</strong> <%= @offer.details %></p>     
   </div> 
 </div>
+
+<div class="row">
+  <div class="span5 offset1">
+    <% @bullets[0..3].each do |bullets| %>  
+      <p><%= bullets.bullet_text %></p>
+	<% end %>  
+  </div> 
+  <div class="span5 offset1">
+    <% @categories.each do |category| %>  
+      <p><%= category.id %></p>
+	<% end %>  
+  </div>
+</div>  
+
+<div class="row">
+  <div class="span5 offset1">
+    <% @images.each do |image| %>  
+	  <%= image_tag image.image_url, alt: "Image", height: "100", width: "130" %>
+	<% end %>    
+  </div>   
+</div>  

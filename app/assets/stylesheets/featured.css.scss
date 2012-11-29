@@ -41,8 +41,28 @@ $terms-bckgrnd-color:#E6E4E4;
   @include min_height_500;
   img {
     padding-left:10px;
-    max-width: 100%; 
+    max-width: 100%;
+	width:740px;
+	height:491px;
   }  
+}
+
+.featuredBuy {
+  background-color: #DFDEE9;
+  position: absolute;
+  top: 45px;
+  left: -10px;
+  z-index: 101;
+  padding: 6px 15px 6px 50px;
+}
+
+.featuredrFolder {
+  background: url('rfolder.png') no-repeat;
+  position: absolute;
+  top: 93px;
+  left: -10px;  
+  height: 10px;  
+  width: 10px;  
 }
 
 .featuredAttributes {
@@ -52,6 +72,9 @@ $terms-bckgrnd-color:#E6E4E4;
   border-left:1px solid $featured-border-color;  
   @include min_height_500;
   line-height:15px;
+  h3 {
+    line-height:18px;  	  
+  }
   h4 {
     font-size:16px;
     line-height:15px;  	
@@ -71,6 +94,9 @@ $terms-bckgrnd-color:#E6E4E4;
   word-break:break-all;
 }
 
+.featuredBtnContainer {
+  margin: 0 auto 10px;
+}
 
 .featuredBullets {
   float:left;
@@ -109,3 +135,8 @@ $terms-bckgrnd-color:#E6E4E4;
   font-size:12px;
   text-decoration:none;
 }
+
+
+
+
+

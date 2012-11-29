@@ -11,4 +11,9 @@
 
 class Image < ActiveRecord::Base
   attr_accessible :image_url, :offer_id
+
+  belongs_to :offer
+  
+  validates :offer_id, presence: true    
+  validates :image_url, presence: true    
 end
