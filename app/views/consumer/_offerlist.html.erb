@@ -7,19 +7,17 @@
     </div>
     <div class="offerlistContainer">  	
     <ul class="thmbnails">
-      <% i = 0 %>
       <% @offers.each do |offers| %>
-      <% i += 1 %>	  
-      <% pic = (i).to_s + "o" + ".jpg" %>
-      <% pic = offers.images[0].photo.url unless offers.images[0].nil? %>	  
-      <li>
-        <div class="thmbnail">
-		  <%= link_to image_tag(pic, alt: "Offers"), home_path(offers.id) %>
-		  <div class="caption">
-		  	<%= link_to offers.heading, home_path(offers.id) %>
-		  </div>
-        </div>
-      </li>
+        <% pic = "offer_default.jpg" %>
+        <% pic = offers.images[0].photo.url unless offers.images[0].nil? %>	  
+        <li>
+          <div class="thmbnail">
+		    <%= link_to image_tag(pic, alt: "Offers"), home_path(offers.id) %>
+		    <div class="caption">
+		  	  <%= link_to offers.heading, home_path(offers.id) %>
+		    </div>
+          </div>
+        </li>
       <% end %> 
     </ul>
 	</div>
