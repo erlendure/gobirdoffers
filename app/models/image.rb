@@ -12,9 +12,9 @@
 class Image < ActiveRecord::Base
   attr_accessible :image_url, :offer_id, :photo
 
-  has_attached_file :photo
-                    #,:url => "/assets/offers/:id/:basename.:extension"
-					#,:path => ":rails_root/public/assets/offers/:id/:basename.:extension"
+  has_attached_file :photo,
+                    :url => "/assets/offers/:id/:basename.:extension",
+					:path => ":rails_root/public/assets/offers/:id/:basename.:extension"
   
   belongs_to :offer
   
