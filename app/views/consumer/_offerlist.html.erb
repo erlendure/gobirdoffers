@@ -11,7 +11,7 @@
       <% @offers.each do |offers| %>
       <% i += 1 %>	  
       <% pic = (i).to_s + "o" + ".jpg" %>
-      <% pic = offers.images[0].image_url unless offers.images[0].nil? %>	  
+      <% pic = offers.images[0].photo.url unless offers.images[0].nil? %>	  
       <li>
         <div class="thmbnail">
 		  <%= link_to image_tag(pic, alt: "Offers"), home_path(offers.id) %>

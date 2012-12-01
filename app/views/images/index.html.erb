@@ -1,11 +1,10 @@
 <% provide(:title, 'Images') %>
 
-<%= render 'shared/admin_header', heading: @offer.heading, btn_txt: 'Show All', path: offers_path %>
+<%= render 'shared/admin_header', heading: @offer.heading, btn_txt: 'Show All Offers', path: offers_path %>
 
 <table class="table table-hover">
   <thead>
 	<th>Image</th>  
-    <th>URL</th>
     <th class="tdMid">Edit</th>
     <th class="tdMid">Delete</th>
   </thead>
@@ -25,7 +24,7 @@
 
 	  </br></br>
 	  
-      <%= f.submit "Create new Image", class: "btn btn-primary" %>
+      <%= f.submit "Upload new Image", class: "btn btn-primary" %>
 	<% end %>	
   </div>
 </div>
