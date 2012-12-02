@@ -28,7 +28,8 @@ $color_char:#2E2E2E;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#D4D4DF));
   background-image: -webkit-linear-gradient(top, #ffffff, #D4D4DF);
   background-image: -o-linear-gradient(top, #ffffff, #D4D4DF);
-  background-image: linear-gradient(to bottom, #ffffff, #D4D4DF);  
+  background-image: linear-gradient(to bottom, #ffffff, #D4D4DF); 
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#D4D4DF', GradientType=0);  
 }
 
 .headerContainer {
@@ -86,8 +87,9 @@ footer {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000000), to(#BCBBC6));
   background-image: -webkit-linear-gradient(top, #000000, #BCBBC6);
   background-image: -o-linear-gradient(top, #000000, #BCBBC6);
-  background-image: linear-gradient(to bottom, #000000, #BCBBC6);    
-
+  background-image: linear-gradient(to bottom, #000000, #BCBBC6); 
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#BCBBC6', GradientType=0);    
+  
   a {
 	color:$headerfooter-char-color;
     &:hover { 
