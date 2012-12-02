@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html class="consumer">
+<html>
   <head>
-    <title><%= full_title(yield(:title)) %></title>
+    <title><%= full_title(yield(:title)) %></title>  
 	<%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "application" %>
@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag    "application", media: "all" %>
   </head>
   <body>
+    <%= image_tag "backgrnd_site.jpg", alt: "Background Image", class: "bg" %>
     <%= render 'layouts/consumer_header' %>
     <%= yield %>
     <%= render 'layouts/consumer_footer' %>	

@@ -4,7 +4,7 @@ class ImagesController < ApplicationController
   def index
     @offer = Offer.find(params[:format])    
     @images = Image.where(offer_id: params[:format])
-    @bpoints = Image.new
+    @iimages = Image.new
   end
 
   def create
@@ -14,6 +14,9 @@ class ImagesController < ApplicationController
       flash[:success] = "Image created"          
       redirect_to images_path(@offer_id)
     else
+      @offer = Offer.find(params[:image][:offer_id])    
+      @images = Image.where(offer_id: params[:image][:offer_id])
+      @iimages = Image.new
       render 'index'
     end    
   end
@@ -29,6 +32,9 @@ class ImagesController < ApplicationController
       flash[:success] = "Image updated"
       redirect_to images_path(@offer_id)
     else
+      @offer = Offer.find(params[:image][:offer_id])    
+      @images = Image.where(offer_id: params[:image][:offer_id])
+      @iimages = Image.new		
       render 'edit'
     end
   end

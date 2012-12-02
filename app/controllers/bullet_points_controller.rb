@@ -14,6 +14,9 @@ class BulletPointsController < ApplicationController
       flash[:success] = "Bullet Point created"          
       redirect_to bullet_points_path(@offer_id)
     else
+      @offer = Offer.find(params[:bullet_point][:offer_id])  
+      @bullet_points = BulletPoint.where(offer_id: params[:bullet_point][:offer_id])	  
+      @bpoints = BulletPoint.new	  
       render 'index'
     end    
   end
@@ -21,7 +24,7 @@ class BulletPointsController < ApplicationController
   def edit
     @bullet_point = BulletPoint.find(params[:id]) 
   end
-
+  
   def update
     @bullet_point = BulletPoint.find(params[:id])
     if @bullet_point.update_attributes(params[:bullet_point])
@@ -29,6 +32,9 @@ class BulletPointsController < ApplicationController
       flash[:success] = "Bullet Point updated"
       redirect_to bullet_points_path(@offer_id)
     else
+      @offer = Offer.find(params[:bullet_point][:offer_id])  
+      @bullet_points = BulletPoint.where(offer_id: params[:bullet_point][:offer_id])	  
+      @bpoints = BulletPoint.new	
       render 'edit'
     end
   end
