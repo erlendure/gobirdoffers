@@ -201,3 +201,35 @@ h6 {
 .pos_rela {
   position: relative;
 }
+
+.btn-link {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #49afcd;
+  *background-color: #2E3192;
+  background-image: -moz-linear-gradient(top, #5bc0de, #2E3192);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2E3192));
+  background-image: -webkit-linear-gradient(top, #5bc0de, #2E3192);
+  background-image: -o-linear-gradient(top, #5bc0de, #2E3192);
+  background-image: linear-gradient(to bottom, #5bc0de, #2E3192);
+  background-repeat: repeat-x;
+  border-color: #2E3192 #2E3192 #1f6377;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2E3192', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn-link:hover,
+.btn-link:active,
+.btn-link.active,
+.btn-link.disabled,
+.btn-link[disabled] {
+  color: #ffffff;
+  background-color: #2E3192;
+  *background-color: #2a85a0;
+}
+
+.btn-link:active,
+.btn-link.active {
+  background-color: #24748c \9;
+}

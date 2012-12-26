@@ -17,4 +17,7 @@ class Image < ActiveRecord::Base
   belongs_to :offer
   
   validates :offer_id, presence: true
+  validates_attachment_presence :photo
+  validates_attachment_size :photo, :less_than => 5.megabytes  
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png', 'image/pjpeg', 'image/x-png']
 end

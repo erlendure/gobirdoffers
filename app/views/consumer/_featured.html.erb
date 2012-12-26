@@ -12,7 +12,8 @@
             <div class="carousel-inner">
               <% @featured.images.each_with_index do |images, i| %>
 		        <div class="item <%= if i == 0 then "active" end %> ">
-	              <%= image_tag images.photo.url, alt: "Featured", class: "featuredImage" %>	  
+	              <!--<%= image_tag images.photo.url, alt: "Featured", class: "featuredImage" %> -->
+	              <%= image_tag images.image_url, alt: "Featured", class: "featuredImage" %>
                 </div>
 	  		  <% end %>
             </div> 
@@ -43,13 +44,13 @@
         <p>Value</p>
         <h3>$<%= @featured.price.to_i.to_s %></h3>
 	  </div>
+      <div class="featuredAttr">	  	  
+        <p>Savings</p>
+        <h3><%= if @featured.discount == 100 then "Endless" else '$' + ((@featured.price/(1-(@featured.discount/100))) - @featured.price).to_i.to_s end %></h3>
+	  </div>	  
       <div class="featuredAttr">	  
         <p>Discount</p>
         <h3><%= @featured.discount.to_i %>%</h3>
-	  </div>
-      <div class="featuredAttr">	  	  
-        <p>Savings</p>
-        <h3>$200</h3>
 	  </div>
       <div class="featuredAttr">	  	  
         <p>Redeem by</p>

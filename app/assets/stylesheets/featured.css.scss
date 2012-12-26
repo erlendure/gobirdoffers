@@ -74,7 +74,9 @@ $terms-bckgrnd-color:#E6E4E4;
   @include min_height_500;
   line-height:15px;
   h3 {
-    line-height:18px;  	  
+    line-height:18px;
+    text-align:center;
+	color:#FF0000;
   }
   h4 {
     font-size:16px;

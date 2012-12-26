@@ -1,5 +1,6 @@
 <tr>
-  <td><%= image_tag image.photo.url, alt: "Image", height: "100", width: "130" %></td>  
+  <!--<td><%= image_tag image.photo.url, alt: "Image", height: "100", width: "130" %></td> -->
+  <td><%= image_tag image.image_url, alt: "Image", height: "100", width: "130" %></td>    
   <td class="tdMid"><%= link_to '', edit_image_path(image) , class: "icon-edit" %></td>
   <td class="tdMid"><%= link_to '', image, confirm: 'Are you sure?', method: :delete, class: "icon-remove" %></td>
 </tr>
