@@ -61,7 +61,7 @@
 	    <h5><%= @featured.owner.name %></h5>
 	    <span class="addr"><%= @featured.owner.address1 %></span>
 	    <span class="addr"><%= @featured.owner.zip %> <%= @featured.owner.city %></span>
-  	    <%= link_to @featured.owner.url, 'http://www.mbl.is', class: "addr" %>		
+  	    <%= link_to @featured.owner.url, 'http://' + @featured.owner.url, class: "addr" %>		
 		</br>
 	  </div>	  
     </div>
