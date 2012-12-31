@@ -8,6 +8,7 @@ Gobirdoffers::Application.routes.draw do
   resources :bullet_points
   resources :offer_categories  
   resources :images 
+  resources :reroute, only: [:show]
   resources :sessions, only: [:new, :create, :destroy]
   resources :offers, only: [:create, :edit, :destroy]
 

@@ -27,19 +27,12 @@
 	    <% end %>
 		<div class="featuredrFolder"></div>		
 	    <div class="featuredBuy">
-	      <%= link_to 'Buy Now | $' + @featured.price.to_i.to_s , '#', class: "btn btn-large btn-success" %>
+	      <%= link_to 'Buy Now | $' + @featured.price.to_i.to_s , reroute_path(id: @featured.id, url: 'http://' + @featured.owner.url), class: "btn btn-large btn-success" %>
 	    </div>
       </div>
     </div>	
 	
     <div class="featuredAttributes">
-<!--
-      <div class="featuredAttr">
-        <div class="featuredBtnContainer">	  
-          <%= link_to 'Buy Now', '#', class: "btn btn-large btn-block btn-success" %>
-	    </div>	
-	  </div>
--->	  
       <div class="featuredAttr">
         <p>Value</p>
         <h3>$<%= @featured.price.to_i.to_s %></h3>

@@ -1,7 +1,7 @@
 <tr>
   <td><%= link_to offer.heading, offer %></td>
   <td><%= link_to offer.owner.name, owner_path(offer.owner.id) %></td>  
-  <td><%= offer.price %></td>
+  <td><%= offer.visit_count.presence || 0 %></td>
   <td><%= offer.active %></td>
   <td><%= time_ago_in_words(offer.created_at) %> ago</td>
   <td><%= link_to offer.owner.user.name, user_path(offer.owner.user.id) %></td>

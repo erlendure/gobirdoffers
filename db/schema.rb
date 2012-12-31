@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201000554) do
+ActiveRecord::Schema.define(:version => 20121229195633) do
 
   create_table "bullet_points", :force => true do |t|
     t.integer  "offer_id"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20121201000554) do
     t.boolean  "active"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+    t.integer  "visit_count"
   end
 
   add_index "offers", ["owner_id"], :name => "index_offers_on_owner_id"

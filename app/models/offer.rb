@@ -19,7 +19,7 @@
 #
 
 class Offer < ActiveRecord::Base
-  attr_accessible :owner_id, :active, :details, :discount, :end_date, :expire_date_begin, :expire_date_end, :featured, :heading, :price, :terms
+  attr_accessible :owner_id, :active, :details, :discount, :end_date, :expire_date_begin, :expire_date_end, :featured, :heading, :price, :terms, :visit_count
 
   belongs_to :owner
   
