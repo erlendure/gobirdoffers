@@ -19,8 +19,6 @@ Gobirdoffers::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
 
   match '/newoffer',  to: 'offers#new'
-
-  match '/test',    to: 'test#test'
   
   match '/home',    to: 'consumer#show'
 
