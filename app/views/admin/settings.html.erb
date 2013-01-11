@@ -1,6 +1,54 @@
 <% provide(:title, 'Settings') %>
-<h1>System Settings</h1>
+
+<% offer_cnt  = Offer.count %>
+<% active_cnt = Offer.where(active: true).count %>
+<% visit_cnt  = Offer.sum("visit_count") %>
+<% visit_max  = Offer.maximum("visit_count") %>
+
+<% owner_cnt    = Owner.count %>
+<% owner_max_v  = Owner.joins(:offers).order("offers.visit_count DESC").limit(1) %>
+<% owner_max_av = Owner.joins(:offers).where("offers.active = ?", true).order("offers.visit_count DESC").limit(1) %>
+<% owner_max_o  = Owner.joins(:offers).select("owners.name, count(*) as cnt").group("owners.name").order("cnt DESC").limit(1)  %>
+
+<% user_cnt    = User.count %>
+<% user_max_v  = User.joins(:owners, :offers).order("offers.visit_count DESC").limit(1) %>
+<% user_max_av = User.joins(:owners, :offers).where("offers.active = ?", true).order("offers.visit_count DESC").limit(1) %>
+<% user_max_o  = User.joins(:owners, :offers).select("users.name, count(*) as cnt").group("users.name").order("cnt DESC").limit(1)  %>
+
+
+<h1>Summary</h1>
+<div class="row">
+  <div class="span4">
+    <div class="adminSummary">
+	  <h3>Offers</h3>	  
+	  <p>Number of Offers: <%= offer_cnt %></p>
+	  <p>Active Offers: <%= active_cnt %></p>
+	  <p>Number Visits: <%= visit_cnt %></p>	  
+	  <p>Maximum Offer Visits: <%= visit_max %></p>	  	  
+	</div>
+  </div>
+  <div class="span4">
+    <div class="adminSummary">
+	  <h3>Owners</h3>
+	  <p>Number of Owners: <%= owner_cnt %></p>	  
+	  <p>Top Visits Owner: <%= owner_max_v[0].name %></p>	  	  
+	  <p>Top Active Visits Owner: <%= owner_max_av[0].name %></p>	  	  	  
+	  <p>Max Offers Owner: <%= owner_max_o[0].name %></p>	  	  	  
+	</div>  
+  </div>
+  <div class="span4">
+    <div class="adminSummary">
+	  <h3>Users</h3>
+	  <p>Number of Users: <%= user_cnt %></p>	  
+	  <p>Top Visits Users: <%= user_max_v[0].name %></p>	  	  
+	  <p>Top Active Visits User: <%= user_max_av[0].name %></p>	  	  	  
+	  <p>Max Offers Users: <%= user_max_o[0].name %></p>	  	  	  
+	</div>  
+  </div>  
+</div>
+
 </br>
+<h1>System Settings</h1>
 <table class="table table-hover">
   <thead>
     <th>Entity</th>
