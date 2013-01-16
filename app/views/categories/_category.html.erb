@@ -1,7 +1,6 @@
 <tr>
   <td><%= category.cat_name %></td>	
   <td><%= category.cat_description %></td>
-  <td class="tdMid"><%= category.locale_id %></td>  
   <td class="tdMid"><%= link_to '', edit_category_path(category) , class: "icon-edit" %></td>
   <td class="tdMid"><%= link_to '', category, confirm: 'Are you sure?', method: :delete, class: "icon-remove" %></td>
 </tr>
