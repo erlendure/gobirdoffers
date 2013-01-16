@@ -57,6 +57,19 @@
 		</br>
 	  </div>	  
     </div>
+
+    <div class="clearfix"></div>
+	
+<div class="accordion" id="accordion2">
+
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        Details..
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
+	
     <div class="featuredBullets">  
       <h4>Features</h4>
       <ul>
@@ -66,12 +79,19 @@
       </ul>
     </div>
     <div class="featuredDetails"> 
-      <h4>Details</h4>
+      <h4>The Deal</h4>
       <p><%= @featured.details %></p>
-    </div>	
+    </div>
     <div class="clearfix"></div>	
     <div class="featuredTerms">  
-      <span><%= @featured.terms %></span>
-    </div>	
+      <span>Terms: <%= @featured.terms %></span>
+    </div>
+
+      </div>
+    </div>
+
+</div>
+
+	
   </div>
 </div>
