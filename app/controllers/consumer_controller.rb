@@ -15,6 +15,8 @@ class ConsumerController < ApplicationController
   	end
 
   	@bullets = BulletPoint.find_all_by_offer_id(@featured.id)
+
+	@categories = Category.all
   end  
 end
  

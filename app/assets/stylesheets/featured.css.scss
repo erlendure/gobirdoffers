@@ -73,9 +73,13 @@ $terms-bckgrnd-color:#E6E4E4;
   border-left:1px solid $featured-border-color;  
   @include min_height_500;
   line-height:15px;
+  h2 {
+	color:#2E3192;
+	font-weight:bolder;  
+  }
   h3 {
     line-height:18px;
-    text-align:center;
+    text-align:left;
 	color:#2E3192;
 	font-weight:bolder;
   }

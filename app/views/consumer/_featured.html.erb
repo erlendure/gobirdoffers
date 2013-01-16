@@ -34,7 +34,7 @@
     <div class="featuredAttributes">
       <div class="featuredAttr">
         <p>Value</p>
-        <h3>$<%= @featured.price.to_i.to_s %></h3>
+        <h2>$<%= @featured.price.to_i.to_s %></h2>
 	  </div>
       <div class="featuredAttr">	  	  
         <p>Savings</p>
@@ -49,10 +49,10 @@
         <h4><%= @featured.end_date.strftime("%b. %d %Y") %></h4>
 	  </div>
       <div class="featuredAttr">	  	  
-	    <p>Where to redeem</p>
+	    <p>Presented by</p>
 	    <h5><%= @featured.owner.name %></h5>
-	    <span class="addr"><%= @featured.owner.address1 %></span>
-	    <span class="addr"><%= @featured.owner.zip %> <%= @featured.owner.city %></span>
+	    <!--<span class="addr"><%= @featured.owner.address1 %></span>-->
+	    <!--<span class="addr"><%= @featured.owner.zip %> <%= @featured.owner.city %></span>-->
   	    <%= link_to @featured.owner.url, reroute_path(id: @featured.id, url: 'http://' + @featured.owner.url), class: "addr" %>		
 		</br>
 	  </div>	  

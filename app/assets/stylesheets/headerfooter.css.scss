@@ -21,7 +21,8 @@ $color_char:#2E2E2E;
   box-shadow:$container-box-shadow;
   margin-left:auto;
   margin-right:auto; 
-  border-bottom:solid 2px $headerfooter-border-color;
+  border-top:solid 2px $headerfooter-border-color;  
+  border-bottom:solid 1px $headerfooter-border-color;
 
   background-color: #D4D4DF;
   background-image: -moz-linear-gradient(top, #ffffff, #D4D4DF);
@@ -50,29 +51,12 @@ $color_char:#2E2E2E;
   }
 }
 
-.navigate {
-  ul {
-    margin: 17px 0 10px 0;
+.headerButtons {
+    margin: 5px 0 0 0;
     float:right;
-    li {
-      display:block;	
-      float:left;
-      margin-left:10px;
-      margin-right:20px;	  
-	  a { 
-        text-decoration:none;
-		/*
-		color:$color_char;	
-	    &:hover { 
-		  color:$headerfooter-hover-color;
-		}
-		*/
-      }			  
-    }
-  } 
 }
 
-
+/*********************************************************************************************************************************************/
 footer {
   height:40px;   
   font-size: 12px; 
