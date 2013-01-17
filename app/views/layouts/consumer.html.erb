@@ -10,8 +10,11 @@
   </head>
   <body>
     <!--<%= image_tag "backgrnd_site.jpg", alt: "Background Image", class: "bg" %>-->
-    <%= render 'layouts/consumer_header' %>
-    <%= yield %>
+      <%= render 'layouts/consumer_header' %>
+	<div class="wrapper">		  
+      <%= yield %>
+      <div class="push"></div>
+    </div>		
     <%= render 'layouts/consumer_footer' %>	
   </body>
 </html>
