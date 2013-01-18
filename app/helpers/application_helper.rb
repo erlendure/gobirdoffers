@@ -15,8 +15,8 @@ module ApplicationHelper
   #Returns logo
   def decide_logo()
     url = request.url
-    logo = "reykjavikoffers.gif"
-	if url["reykjaoffers.com"].nil? then logo = "icelandoffers.gif" end
+    logo = "icelandoffers.gif"
+	if url["icelandoffers.com"].nil? then logo = "reykjavikoffers.gif" end
 	logo
   end
 end
