@@ -7,7 +7,7 @@
     </div>
     <div class="offerlistContainer">  	
     <ul class="thmbnails">
-      <% @offers[0..2].each do |offers| %>
+      <% @offers[0..12].each do |offers| %>
         <% pic = "offer_default.jpg" %>
         <% pic = offers.images[0].photo.url unless offers.images[0].nil? %>
         <li>
