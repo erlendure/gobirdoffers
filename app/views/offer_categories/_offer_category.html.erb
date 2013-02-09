@@ -1,0 +1,5 @@
+<tr>
+  <td><%= offer_category.category.cat_name %></td>
+  <td class="tdMid"><%= link_to '', edit_offer_category_path(offer_category) , class: "icon-edit" %></td>
+  <td class="tdMid"><%= link_to '', offer_category, confirm: 'Are you sure?', method: :delete, class: "icon-remove" %></td>
+</tr>

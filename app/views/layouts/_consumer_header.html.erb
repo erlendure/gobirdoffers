@@ -1,0 +1,27 @@
+
+
+<header class="headerBlock">
+  <div class="headerContainer container">
+    <div class="logoContainer">
+      <%= link_to image_tag(decide_logo(), alt: "Logo"), root_path, id: "logo" %>	            	   
+	</div>
+    <div class="headerButtons">
+      <div class="btn-toolbar">	  
+        <div class="btn-group">
+		  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+            Categories <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+	        <% @categories.each do |category| %>
+              <li><%= link_to category.cat_name, home_path %></li>					
+		    <% end %>			
+          </ul>
+        </div>	  		  
+        <div class="btn-group">		  
+          <%= if @all == 1 then link_to "Show Featured", home_path, class:"btn btn-primary" else link_to "Show All", home_path(0), class:"btn btn-primary" end %>				  
+        </div>	  
+      </div>	  		
+	</div>
+    <div class="clearfix"></div>	
+  </div>
+</header>

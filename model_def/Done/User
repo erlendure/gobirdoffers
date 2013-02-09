@@ -1,0 +1,5 @@
+rails generate model User name:string address1:string address3:string address2:string city:string state:string zip:string phone:string country_id:integer email:string url:string locale_id:integer access_level:string
+
+rails generate migration add_username_password_to_users username:string password_digest:string
+
+User.create(name:"Erlendur", email:"erlendur@gmail.com", username:"erlendure", password:"foobar", password_confirmation:"foobar")

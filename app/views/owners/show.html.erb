@@ -1,0 +1,32 @@
+<% provide(:title, @owner.name) %>
+
+<%= render 'shared/admin_header', heading: @owner.name, btn_txt: 'Show All', path: owners_path %>
+
+<div class="row">
+  <div class="span5 offset1">
+    <p><strong>Offer Count:</strong> <%= @owner.offers.count %></p>
+    <address>
+      <p><strong>Address:</strong> <%= @owner.address1 %></p>
+      <p><strong>City:</strong> <%= @owner.city %></p>
+      <p><strong>State:</strong> <%= @owner.state %></p>
+      <p><strong>Zip:</strong> <%= @owner.zip %></p>
+      <p><strong>Phone:</strong> <%= @owner.phone %></p>        
+    <address>
+
+    <p><strong>eMail:</strong> <%= @owner.email %></p>        
+    <p><strong>Web:</strong> <%= @owner.url %></p>              
+
+  </div>
+  <div class="span5 offset1">
+    <address>
+      <p><strong>Contact Name:</strong> <%= @owner.contact_name %></p>	
+      <p><strong>Contact Address:</strong> <%= @owner.contact_address1 %></p>
+      <p><strong>Contact City:</strong> <%= @owner.contact_city %></p>
+      <p><strong>Contact State:</strong> <%= @owner.contact_state %></p>
+      <p><strong>Contact Zip:</strong> <%= @owner.contact_zip %></p>
+      <p><strong>Contact Phone:</strong> <%= @owner.contact_phone %></p>        
+    <address>
+
+    <p><strong>Contact eMail:</strong> <%= @owner.contact_email %></p>        
+  </div> 
+</div>

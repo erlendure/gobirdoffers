@@ -1,0 +1,1 @@
+rails generate model Bullet_Point offer_id:integer bullet_text:string

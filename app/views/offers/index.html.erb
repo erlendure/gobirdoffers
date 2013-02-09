@@ -1,0 +1,26 @@
+<% provide(:title, 'All offers') %>
+
+<%= render 'shared/admin_header', heading: 'All Offers', btn_txt: 'Add Offer', path: new_offer_path %>
+
+<%= will_paginate %>
+
+<table class="table table-hover">
+  <thead>
+    <th>Heading</th>
+    <th>Owner</th>
+    <th>Visits</th>    
+    <th>Active</th>
+    <th>Created</th>    
+    <th>By</th>
+    <th class="tdMid">Bullets</th>
+    <th class="tdMid">Categories</th>    
+    <th class="tdMid">Images</th>    	
+    <th class="tdMid">Edit</th>
+    <th class="tdMid">Delete</th>
+  </thead>
+  <tbody>
+  	<%= render @offers %>
+  </tbody>	
+</table>	
+
+<%= will_paginate %>

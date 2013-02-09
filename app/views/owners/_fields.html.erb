@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="span5 offset1">
+    <%= form_for(@owner) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+	  
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.label :address1 %>
+		<%= f.text_field :address1 %>
+
+		<%= f.label :city %>
+		<%= f.text_field :city %>
+
+		<%= f.label :state %>
+		<%= f.text_field :state %>
+
+		<%= f.label :zip %>
+		<%= f.text_field :zip %>
+
+		<%= f.label :country_id %>
+		<%= f.collection_select(:country_id, @countries, :id, :country_name, {:prompt => true}) %>
+
+		<%= f.label :phone %>
+		<%= f.text_field :phone %>
+
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+
+		<%= f.label :url %>
+		<%= f.text_field :url %>
+
+  </div>
+  <div class="span5 offset1">
+
+        <%= f.label :contact_name %>
+		<%= f.text_field :contact_name %>
+
+		<%= f.label :contact_address1 %>
+		<%= f.text_field :contact_address1 %>
+
+		<%= f.label :contact_city %>
+		<%= f.text_field :contact_city %>
+
+		<%= f.label :contact_state %>
+		<%= f.text_field :contact_state %>
+
+		<%= f.label :contact_zip %>
+		<%= f.text_field :contact_zip %>
+
+		<%= f.label :contact_country_id %>
+		<%= f.collection_select(:contact_country_id, @countries, :id, :country_name, {:prompt => true}) %>
+
+		<%= f.label :contact_phone %>
+		<%= f.text_field :contact_phone %>
+
+		<%= f.label :contact_email %>
+		<%= f.text_field :contact_email %>
+
+	  </br></br>
+			
+      <%= f.submit btn_txt, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

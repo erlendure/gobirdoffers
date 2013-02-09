@@ -1,0 +1,19 @@
+<% provide(:title, 'Locales List') %>
+
+<%= render 'shared/admin_header', heading: 'All Locales', btn_txt: 'Add Locale', path: new_locale_path %>
+
+<%= will_paginate %>
+
+<table class="table table-hover">
+  <thead>
+    <th>Locale ID</th>
+    <th>Description</th>
+    <th class="tdMid">Edit</th>
+    <th class="tdMid">Delete</th>
+  </thead>
+  <tbody>
+  	<%= render @locales %>
+  </tbody>	
+</table>	
+
+<%= will_paginate %>

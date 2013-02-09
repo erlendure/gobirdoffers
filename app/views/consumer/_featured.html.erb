@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="featuredBlock">
+    <div class="featuredHeading">  
+      <h2><%= @featured.heading %></h2>
+    </div>
+
+	<div class="pos_rela">
+      <% img_cnt = @featured.images.count %>	 
+      <div class="featuredPic">	
+	    <% if img_cnt > 0 then %>	  
+          <div id="myCarousel" class="carousel slide">	
+            <div class="carousel-inner">
+              <% @featured.images.each_with_index do |images, i| %>
+		        <div class="item <%= if i == 0 then "active" end %> ">
+	              <%= image_tag images.photo.url, alt: "Featured", class: "featuredImage" %>
+                </div>
+	  		  <% end %>
+            </div> 
+            <% if img_cnt > 1 then %>	  
+              <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+              <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		    <% end %>
+          </div>				
+	    <% else %>
+          <%= image_tag "offer_default.jpg", alt: "Featured", class: "featuredImage" %>	  
+	    <% end %>
+		<div class="featuredrFolder"></div>		
+	    <div class="featuredBuy">
+	      <%= link_to 'Buy Now | $' + @featured.price.to_i.to_s , reroute_path(id: @featured.id, url: 'http://' + @featured.owner.url), class: "btn btn-large btn-success" %>
+	    </div>
+      </div>
+    </div>	
+
+    <div class="featuredAttributes">
+      <div class="featuredAttr">
+        <p>Value</p>
+        <h2>$<%= @featured.price.to_i.to_s %></h2>
+	  </div>
+      <div class="featuredAttr">	  	  
+        <p>Savings</p>
+        <h3><%= if @featured.discount == 100 then "Endless" else '$' + ((@featured.price/(1-(@featured.discount/100))) - @featured.price).to_i.to_s end %></h3>
+	  </div>	  
+      <div class="featuredAttr">	  
+        <p>Discount</p>
+        <h3><%= @featured.discount.to_i %>%</h3>
+	  </div>
+      <div class="featuredAttr">	  	  
+        <p>Redeem by</p>
+        <h4><%= @featured.end_date.strftime("%b. %d %Y") %></h4>
+	  </div>
+      <div class="featuredAttr">	  	  
+	    <p>Presented by</p>
+	    <h5><%= @featured.owner.name %></h5>
+	    <!--<span class="addr"><%= @featured.owner.address1 %></span>-->
+	    <!--<span class="addr"><%= @featured.owner.zip %> <%= @featured.owner.city %></span>-->
+  	    <%= link_to @featured.owner.url, reroute_path(id: @featured.id, url: 'http://' + @featured.owner.url), class: "addr" %>		
+		</br>
+	  </div>	  
+    </div>
+
+    <div class="clearfix"></div>
+	
+    <div class="accordion" id="accordion2">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Details..</a>
+      </div>
+      <div id="collapseOne" class="accordion-body collapse">
+        <div class="accordion-inner">
+		<div class="featuredBullets">  
+		  <h4>Features</h4>
+		  <ul>
+			<% @bullets[0..3].each do |bullets| %>  
+			  <li><%= bullets.bullet_text %></li>
+			<% end %>
+		  </ul>
+		</div>
+		<div class="featuredDetails"> 
+		  <h4>The deal</h4>
+		  <p><%= @featured.details %></p>
+		</div>
+		<div class="clearfix"></div>			
+		<div class="featuredTerms">  
+		  <span>Terms: <%= @featured.terms %></span>
+		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

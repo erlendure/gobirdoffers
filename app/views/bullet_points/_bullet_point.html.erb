@@ -1,0 +1,6 @@
+<tr>
+  <td><%= bullet_point.sequence %></td>
+  <td><%= bullet_point.bullet_text %></td>
+  <td class="tdMid"><%= link_to '', edit_bullet_point_path(bullet_point) , class: "icon-edit" %></td>
+  <td class="tdMid"><%= link_to '', bullet_point, confirm: 'Are you sure?', method: :delete, class: "icon-remove" %></td>
+</tr>

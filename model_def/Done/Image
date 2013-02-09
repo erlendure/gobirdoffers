@@ -1,0 +1,1 @@
+rails generate model Image offer_id:integer image_url:text

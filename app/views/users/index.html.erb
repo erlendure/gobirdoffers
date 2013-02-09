@@ -1,0 +1,20 @@
+<% provide(:title, 'All users') %>
+
+<%= render 'shared/admin_header', heading: 'All Users', btn_txt: 'Add User', path: new_user_path %>
+
+<%= will_paginate %>
+
+<table class="table table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Username</th>    
+    <th>eMail</th>
+    <th style="text-align:center">Edit</th>
+    <th style="text-align:center">Delete</th>
+  </thead>
+  <tbody>
+  	<%= render @users %>
+  </tbody>	
+</table>	
+
+<%= will_paginate %>

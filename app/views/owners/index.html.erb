@@ -1,0 +1,21 @@
+<% provide(:title, 'All owners') %>
+
+<%= render 'shared/admin_header', heading: 'All Owners', btn_txt: 'Add Owner', path: new_owner_path %>
+
+<%= will_paginate %>
+
+<table class="table table-hover">
+  <thead>
+    <th>Name</th>
+    <th>eMail</th>    
+    <th>Contact Name</th>
+    <th>Contact eMail</th>
+    <th class="tdMid">Edit</th>
+    <th class="tdMid">Delete</th>
+  </thead>
+  <tbody>
+  	<%= render @owners %>
+  </tbody>	
+</table>	
+
+<%= will_paginate %>

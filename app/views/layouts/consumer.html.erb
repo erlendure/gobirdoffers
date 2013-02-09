@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>  
+	<%= favicon_link_tag 'favicon.ico' %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
+    <%= render 'layouts/shim' %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+  </head>
+  <body>
+    <!--<%= image_tag "backgrnd_site.jpg", alt: "Background Image", class: "bg" %>-->
+      <%= render 'layouts/consumer_header' %>
+	<div class="wrapper">		  
+      <%= yield %>
+      <div class="push"></div>
+    </div>		
+    <%= render 'layouts/consumer_footer' %>	
+  </body>
+</html>

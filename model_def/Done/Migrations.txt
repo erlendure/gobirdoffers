@@ -1,0 +1,8 @@
+rails generate migration remove_column_from_user locale_id:integer
+rails generate migration remove_column_from_owner locale_id:integer
+rails generate migration remove_column_from_offer locale_id:integer, user_id:integer
+rails generate migration add_column_to_owner user_id:integer
+rails generate migration change_column_on_offer featured:boolean
+rails generate migration add_column_to_bullet_point sequence:integer
+
+rails generate migration change_columns_on_offer 

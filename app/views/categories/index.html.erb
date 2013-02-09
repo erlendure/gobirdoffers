@@ -1,0 +1,19 @@
+<% provide(:title, 'All Categories') %>
+
+<%= render 'shared/admin_header', heading: 'All Categories', btn_txt: 'Add Category', path: new_category_path %>
+
+<%= will_paginate %>
+
+<table class="table table-hover">
+  <thead>
+    <th>Category</th>
+    <th>Desciption</th>
+    <th class="tdMid">Edit</th>
+    <th class="tdMid">Delete</th>
+  </thead>
+  <tbody>
+  	<%= render @categories %>
+  </tbody>	
+</table>
+
+<%= will_paginate %>

@@ -1,0 +1,6 @@
+<tr>
+  <td><%= locale.locale_id %></td>
+  <td><%= locale.description %></td>
+  <td class="tdMid"><%= link_to '', edit_locale_path(locale) , class: "icon-edit" %></td>
+  <td class="tdMid"><%= link_to '', locale, confirm: 'Are you sure?', method: :delete, class: "icon-remove" %></td>
+</tr>

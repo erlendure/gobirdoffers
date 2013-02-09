@@ -1,0 +1,10 @@
+<tr>
+  <td><%= link_to owner.name, owner %></td>
+  <td><%= owner.email %></td>  
+  <td><%= owner.contact_name %></td>
+  <td><%= owner.contact_email %></td>
+  <td class="tdMid"><%= link_to '', edit_owner_path(owner) , class: "icon-edit" %></td>
+  <td class="tdMid"><% if current_user.admin? %> 
+  	  <%= link_to '', owner, method: :delete, confirm: "You sure?", class: "icon-remove" %>
+  <% end %></td>
+</tr>

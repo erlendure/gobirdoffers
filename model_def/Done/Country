@@ -1,0 +1,1 @@
+rails generate model Country country_name:string default_locale_id:integer
