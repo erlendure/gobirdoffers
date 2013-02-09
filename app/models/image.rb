@@ -12,7 +12,11 @@
 class Image < ActiveRecord::Base
   attr_accessible :image_url, :offer_id, :photo
 
-  has_attached_file :photo
+  has_attached_file :photo, styles: {
+    thumb: '100x130',
+    list: '220x220>',
+    featured: '740x491'
+  }
   
   belongs_to :offer
   
