@@ -13,6 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+<<<<<<< HEAD
 *.class
 *.pyc
 *.pyo
+=======
+>>>>>>> 88356de39e2c4a68f3b1409bdac7a24103384b37

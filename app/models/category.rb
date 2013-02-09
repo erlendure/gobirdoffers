@@ -16,5 +16,5 @@ class Category < ActiveRecord::Base
   has_many :offer_categories
 
   validates :cat_description,  presence: true
-  validates :cat_name, presence: true       
+  validates :cat_name, presence: true 
 end
