@@ -10,6 +10,7 @@ gem 'jquery-rails', '2.0.2'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'mysql2'
+gem 'therubyracer', :platforms => :ruby
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
